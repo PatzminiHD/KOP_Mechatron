@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 //@brief Firmware Version
-const char constants::version[] = "v0.1.0";
+const char constants::version[] = "v0.2.0";
 
 
 //@brief MCP3008 Chip Select Pin
@@ -31,14 +31,14 @@ uint8_t constants::pins::led::Green_Channel = 1;
 uint8_t constants::pins::led::Blue_Channel = 2;
 
 
-uint8_t constants::pins::motor::FrontLeft_Dir = 0;
-uint8_t constants::pins::motor::FrontLeft_Speed = 0;
-uint8_t constants::pins::motor::FrontRight_Dir = 0;
-uint8_t constants::pins::motor::FrontRight_Speed = 0;
-uint8_t constants::pins::motor::BackLeft_Dir = 0;
-uint8_t constants::pins::motor::BackLeft_Speed = 0;
-uint8_t constants::pins::motor::BackRight_Dir = 0;
-uint8_t constants::pins::motor::BackRight_Speed = 0;
+uint8_t constants::pins::motor::FrontLeft_Dir = 14;
+uint8_t constants::pins::motor::FrontLeft_Speed = 27;
+uint8_t constants::pins::motor::FrontRight_Dir = 13;
+uint8_t constants::pins::motor::FrontRight_Speed = 12;
+uint8_t constants::pins::motor::BackLeft_Dir = 26;
+uint8_t constants::pins::motor::BackLeft_Speed = 25;
+uint8_t constants::pins::motor::BackRight_Dir = 33;
+uint8_t constants::pins::motor::BackRight_Speed = 32;
 
 
 //@brief Set the value of a setting based on the name

@@ -7,29 +7,20 @@
 class Motor
 {
     private:
-    uint8_t DIR_PIN, CHANNEL;
-    uint16_t SPEED;
-    bool DIRECTION, FORWARD_DIRECTION;
 
     void Apply()
     {
+        //Invert Speed because for some reason it seems higher number => lower speed
+        SPEED = MAX_MOTOR_SPEED - SPEED;
         ledcWrite(CHANNEL, SPEED);
+        SPEED = MAX_MOTOR_SPEED - SPEED;
         digitalWrite(DIR_PIN, DIRECTION);
     }
 
     public:
-    Motor(uint8_t dirPin, uint8_t speedPin, uint8_t channel, bool forwardDirection)
-    {
-        DIR_PIN = dirPin;
-        CHANNEL = channel;
-        SPEED = 0;
-        FORWARD_DIRECTION = forwardDirection;
-        pinMode(dirPin, OUTPUT);
-        pinMode(speedPin, OUTPUT);
-        ledcSetup(channel, 20000, 10);
-        ledcAttachPin(speedPin, channel);
-        Apply();
-    }
+    uint8_t DIR_PIN, CHANNEL;
+    uint16_t SPEED;
+    bool DIRECTION, FORWARD_DIRECTION;
 
     void SetSpeed(uint16_t speed)
     {

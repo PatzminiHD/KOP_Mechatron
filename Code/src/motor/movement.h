@@ -9,25 +9,49 @@
 class Movement
 {
     private:
-    Motor Motor_FL = Motor(constants::pins::motor::FrontLeft_Dir,
-                           constants::pins::motor::FrontLeft_Speed,
-                           0,
-                           true);
-    Motor Motor_FR = Motor(constants::pins::motor::FrontRight_Dir,
-                           constants::pins::motor::FrontRight_Speed,
-                           1,
-                           true);
-    Motor Motor_BL = Motor(constants::pins::motor::BackLeft_Dir,
-                           constants::pins::motor::BackLeft_Speed,
-                           2,
-                           true);
-    Motor Motor_BR = Motor(constants::pins::motor::BackRight_Dir,
-                           constants::pins::motor::BackRight_Speed,
-                           3,
-                           true);
+
+    Motor Motor_FL;
+    Motor Motor_FR;
+    Motor Motor_BL;
+    Motor Motor_BR;
 
     public:
     uint16_t DIRECTION, SPEED;
+
+    void init()
+    {
+        Motor_FL.CHANNEL = 0;
+        Motor_FL.DIR_PIN = constants::pins::motor::FrontLeft_Dir;
+        Motor_FL.FORWARD_DIRECTION = false;
+        pinMode(constants::pins::motor::FrontLeft_Dir, OUTPUT);
+        pinMode(constants::pins::motor::FrontLeft_Speed, OUTPUT);
+        ledcSetup(0, 20000, 10);
+        ledcAttachPin(constants::pins::motor::FrontLeft_Speed, 0);
+
+        Motor_FR.CHANNEL = 1;
+        Motor_FR.DIR_PIN = constants::pins::motor::FrontRight_Dir;
+        Motor_FR.FORWARD_DIRECTION = true;
+        pinMode(constants::pins::motor::FrontRight_Dir, OUTPUT);
+        pinMode(constants::pins::motor::FrontRight_Speed, OUTPUT);
+        ledcSetup(1, 20000, 10);
+        ledcAttachPin(constants::pins::motor::FrontRight_Speed, 1);
+
+        Motor_BL.CHANNEL = 2;
+        Motor_BL.DIR_PIN = constants::pins::motor::BackLeft_Dir;
+        Motor_BL.FORWARD_DIRECTION = false;
+        pinMode(constants::pins::motor::BackLeft_Dir, OUTPUT);
+        pinMode(constants::pins::motor::BackLeft_Speed, OUTPUT);
+        ledcSetup(2, 20000, 10);
+        ledcAttachPin(constants::pins::motor::BackLeft_Speed, 2);
+
+        Motor_BR.CHANNEL = 3;
+        Motor_BR.DIR_PIN = constants::pins::motor::BackRight_Dir;
+        Motor_BR.FORWARD_DIRECTION = true;
+        pinMode(constants::pins::motor::BackRight_Dir, OUTPUT);
+        pinMode(constants::pins::motor::BackRight_Speed, OUTPUT);
+        ledcSetup(3, 20000, 10);
+        ledcAttachPin(constants::pins::motor::BackRight_Speed, 3);
+    }
 
     void FullSpeed()
     {
@@ -92,5 +116,46 @@ class Movement
             M_BL_Percent = +1.0;
             M_BR_Percent = cos(rad * 2);
         }
+
+        if(M_FL_Percent < 0)
+        {
+            Motor_FL.SetDirection(false);
+        }
+        else
+        {
+            Motor_FL.SetDirection(true);
+        }
+
+        if(M_FR_Percent < 0)
+        {
+            Motor_FR.SetDirection(false);
+        }
+        else
+        {
+            Motor_FR.SetDirection(true);
+        }
+
+        if(M_BL_Percent < 0)
+        {
+            Motor_BL.SetDirection(false);
+        }
+        else
+        {
+            Motor_BL.SetDirection(true);
+        }
+
+        if(M_BR_Percent < 0)
+        {
+            Motor_BR.SetDirection(false);
+        }
+        else
+        {
+            Motor_BR.SetDirection(true);
+        }
+
+        Motor_FL.SetSpeed(map(abs(M_FL_Percent) * 100.0, 0, 100, 0, SPEED));
+        Motor_FR.SetSpeed(map(abs(M_FR_Percent) * 100.0, 0, 100, 0, SPEED));
+        Motor_BL.SetSpeed(map(abs(M_BL_Percent) * 100.0, 0, 100, 0, SPEED));
+        Motor_BR.SetSpeed(map(abs(M_BR_Percent) * 100.0, 0, 100, 0, SPEED));
     }
 };
