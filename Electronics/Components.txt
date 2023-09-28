@@ -1,0 +1,17 @@
+8x Ultraschallsensor
+4x Motor
+1x ESP32
+1x batterypack
+6x Buzzer
+14x LED blue
+
+Sicherungen + halter
+
+
+Links:
+1x ESP32			    https://www.conrad.at/de/p/joy-it-sbc-nodemcu-esp32-entwickler-platine-node-mcu-esp32-modul-1656367.html
+8x Ultraschalllsensor	https://www.conrad.at/de/p/iduino-st1099-ultraschallsensor-1-st-1616245.html
+14x LED blue			https://www.conrad.at/de/p/quadrios-2111o156-led-bedrahtet-blau-rund-5-mm-1300-mcd-30-20-ma-3-v-2583897.html
+4x Sicherunghalter		https://www.conrad.at/de/p/eska-120-800h-120-800h-sicherungs-haltefeder-passend-fuer-sicherungen-feinsicherung-5-x-20-mm-6-3-a-250-v-ac-1-st-533920.html
+10x Sicherung			https://www.conrad.at/de/p/tru-components-1576540-tc-520-623-4a-feinsicherung-o-x-l-5-mm-x-20-mm-4-a-250-v-flink-f-inhalt-1-st-1576540.html
+1x Batterycable         https://www.conrad.at/de/p/modelcraft-akku-anschlusskabel-1x-xt60-buchse-1x-offene-kabelenden-10-00-cm-4-0-mm-58368-10-1235114.html
