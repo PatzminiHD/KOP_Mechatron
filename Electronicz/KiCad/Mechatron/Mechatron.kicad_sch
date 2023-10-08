@@ -1547,7 +1547,7 @@
     (effects (font (size 1.5 1.5)) (justify left bottom))
     (uuid 9632c0da-e9b2-45bb-be15-19278ea45083)
   )
-  (text "Sicherung am + fehlt" (at 93.98 7.62 0)
+  (text "Sicherung am + fehlt" (at 95.25 10.16 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid bd94b484-5cfb-4a30-a829-3da5f4227223)
   )
