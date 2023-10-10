@@ -1,3 +1,6 @@
+#ifndef CONSTANTS_CLASS
+#define CONSTANTS_CLASS
+
 #include <string>
 #include <IPAddress.h>
 
@@ -40,5 +43,13 @@ class constants
         };
     };
 
+    class controller_vars
+    {
+        public:
+        static std::string BT_ADDR;
+    };
+
     static bool setValue(std::string, String);
 };
+
+#endif

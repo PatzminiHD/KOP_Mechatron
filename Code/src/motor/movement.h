@@ -1,5 +1,6 @@
 #include "motor.h"
 #include "../vars/constants.h"
+#include "../controller/controller.h"
 
 #define DIRECTION_FORWARDS  0
 #define DIRECTION_RIGHT     90
@@ -15,8 +16,17 @@ class Movement
     Motor Motor_BL;
     Motor Motor_BR;
 
+    Controller controller;
+
+    enum MovementModeEnum
+    {
+        MovementMode_JoyLeft,
+        MovementMode_GasBreak,
+    };
+
     public:
     uint16_t DIRECTION, SPEED;
+    uint8_t MovementMode;
 
     void init()
     {
@@ -51,6 +61,10 @@ class Movement
         pinMode(constants::pins::motor::BackRight_Speed, OUTPUT);
         ledcSetup(3, 20000, 10);
         ledcAttachPin(constants::pins::motor::BackRight_Speed, 3);
+
+        controller.init();
+
+        MovementMode = MovementMode_GasBreak;
     }
 
     void FullSpeed()
@@ -157,5 +171,109 @@ class Movement
         Motor_FR.SetSpeed(map(abs(M_FR_Percent) * 100.0, 0, 100, 0, SPEED));
         Motor_BL.SetSpeed(map(abs(M_BL_Percent) * 100.0, 0, 100, 0, SPEED));
         Motor_BR.SetSpeed(map(abs(M_BR_Percent) * 100.0, 0, 100, 0, SPEED));
+    }
+
+    void TurnLeft()
+    {
+        Motor_FL.SetDirection(false);
+        Motor_BL.SetDirection(false);
+        Motor_FR.SetDirection(true);
+        Motor_BR.SetDirection(true);
+
+        Motor_FL.SetSpeed(SPEED);
+        Motor_BL.SetSpeed(SPEED);
+        Motor_FR.SetSpeed(SPEED);
+        Motor_BR.SetSpeed(SPEED);
+    }
+
+    void TurnRight()
+    {
+        Motor_FL.SetDirection(true);
+        Motor_BL.SetDirection(true);
+        Motor_FR.SetDirection(false);
+        Motor_BR.SetDirection(false);
+
+        Motor_FL.SetSpeed(SPEED);
+        Motor_BL.SetSpeed(SPEED);
+        Motor_FR.SetSpeed(SPEED);
+        Motor_BR.SetSpeed(SPEED);
+    }
+
+    uint8_t HandleControllerInputs()
+    {
+        if(!Ps3.isConnected())
+        {
+            DIRECTION = 0;
+            SPEED = 0;
+            Apply();
+            return 1;
+        }
+
+        controller.loop();
+
+        switch(MovementMode)
+        {
+            case MovementMode_JoyLeft:
+                HandleMovementModeJoyLeft();
+                break;
+
+            case MovementMode_GasBreak:
+                HandleMovementModeGasBreak();
+                break;
+
+            default:
+                return 2;
+        }
+
+        return 0;
+    }
+
+    void HandleMovementModeGasBreak()
+    {
+        if(controller.joyLX < -10 || controller.joyLX > 10)
+        {
+            SPEED = map(abs(controller.joyLX), 0, 128, 0, MAX_MOTOR_SPEED);
+            if(controller.joyLX < 0)
+            {
+                TurnLeft();
+            }
+            else
+            {
+                TurnRight();
+            }
+            return;
+        }
+
+        SPEED = map(abs(controller.throttleGas - controller.throttleBreake), 0, 128, 0, MAX_MOTOR_SPEED);
+        
+        if(controller.throttleGas - controller.throttleBreake > 0)
+        {
+            DIRECTION = 180;
+        }
+        else
+        {
+            DIRECTION = 0;
+        }
+
+        Apply();
+    }
+
+    void HandleMovementModeJoyLeft()
+    {
+        if(controller.joyLX != 0)
+        {
+            float tmp = atan(float(controller.joyLY) / float(controller.joyLX));
+            DIRECTION = tmp * RAD_TO_DEG + 90;
+
+            if(controller.joyLX < 0)
+            {
+            DIRECTION += 180;
+            }
+        }
+        else
+        {
+            DIRECTION = 0;
+        }
+        SPEED = map(sqrt(controller.joyLY*controller.joyLY + controller.joyLX*controller.joyLX), 0, 128, 0, MAX_MOTOR_SPEED);
     }
 };

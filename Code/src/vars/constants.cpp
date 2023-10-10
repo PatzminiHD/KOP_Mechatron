@@ -41,6 +41,8 @@ uint8_t constants::pins::motor::BackRight_Dir = 33;
 uint8_t constants::pins::motor::BackRight_Speed = 32;
 
 
+std::string constants::controller_vars::BT_ADDR = "8C:7C:B5:5F:3B:64";
+
 //@brief Set the value of a setting based on the name
 //@param key The name of the setting
 //@param value The value the setting should be set to
