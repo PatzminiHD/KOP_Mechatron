@@ -16,7 +16,7 @@ class constants
     {
         public:
         static uint8_t mcp3008_cs;
-
+        
         class led
         {
             public:
@@ -40,6 +40,13 @@ class constants
             static uint8_t BackLeft_Speed;
             static uint8_t BackRight_Dir;
             static uint8_t BackRight_Speed;
+        };
+
+        class buzzer
+        {
+            public:
+            static uint8_t buzzer_pin;
+            static uint8_t pwm_channel;
         };
     };
 

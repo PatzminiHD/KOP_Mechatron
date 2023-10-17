@@ -22,13 +22,13 @@ uint8_t constants::pins::led::Green = 2;
 uint8_t constants::pins::led::Blue = 4;
 
 //@brief ledc Channel for the Red Pin of the RGB LED
-uint8_t constants::pins::led::Red_Channel = 0;
+uint8_t constants::pins::led::Red_Channel = 4;
 
 //@brief ledc Channel for the Green Pin of the RGB LED
-uint8_t constants::pins::led::Green_Channel = 1;
+uint8_t constants::pins::led::Green_Channel = 5;
 
 //@brief ledc Channel for the Blue Pin of the RGB LED
-uint8_t constants::pins::led::Blue_Channel = 2;
+uint8_t constants::pins::led::Blue_Channel = 6;
 
 
 uint8_t constants::pins::motor::FrontLeft_Dir = 14;
@@ -39,6 +39,10 @@ uint8_t constants::pins::motor::BackLeft_Dir = 26;
 uint8_t constants::pins::motor::BackLeft_Speed = 25;
 uint8_t constants::pins::motor::BackRight_Dir = 33;
 uint8_t constants::pins::motor::BackRight_Speed = 32;
+
+//@brief The Buzzer Pin
+uint8_t constants::pins::buzzer::buzzer_pin = 5;
+uint8_t constants::pins::buzzer::pwm_channel = 7;
 
 
 std::string constants::controller_vars::BT_ADDR = "8C:7C:B5:5F:3B:64";

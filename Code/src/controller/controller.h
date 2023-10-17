@@ -4,7 +4,7 @@
 class Controller
 {
     public:
-    int8_t joyLX, joyLY, joyRX, joyRY;
+    int8_t joyLX, joyLY, joyRX, joyRY, buttonSelect, buttonSquare;
     ps3_status_battery battery;
     uint8_t throttleGas, throttleBreake;
     unsigned long led_blink_millis;
@@ -27,6 +27,9 @@ class Controller
         
         throttleGas = Ps3.data.analog.button.l2;
         throttleBreake = Ps3.data.analog.button.r2;
+
+        buttonSelect = Ps3.data.button.select;
+        buttonSquare = Ps3.data.button.square;
 
         if(millis() - led_blink_millis > 250)
         {

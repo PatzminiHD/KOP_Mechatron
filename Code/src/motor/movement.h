@@ -1,6 +1,7 @@
 #include "motor.h"
 #include "../vars/constants.h"
 #include "../controller/controller.h"
+#include "../music/buzzer.h"
 
 #define DIRECTION_FORWARDS  0
 #define DIRECTION_RIGHT     90
@@ -10,21 +11,22 @@
 class Movement
 {
     private:
+    Buzzer buzzer;
 
     Motor Motor_FL;
     Motor Motor_FR;
     Motor Motor_BL;
     Motor Motor_BR;
 
-    Controller controller;
-
     enum MovementModeEnum
     {
         MovementMode_JoyLeft,
         MovementMode_GasBreak,
+        MovementMode_LAST,
     };
 
     public:
+    Controller controller;
     uint16_t DIRECTION, SPEED;
     uint8_t MovementMode;
 
@@ -63,6 +65,7 @@ class Movement
         ledcAttachPin(constants::pins::motor::BackRight_Speed, 3);
 
         controller.init();
+        buzzer.init();
 
         MovementMode = MovementMode_GasBreak;
     }
@@ -210,6 +213,20 @@ class Movement
         }
 
         controller.loop();
+
+        if(controller.buttonSelect == 1)
+        {
+            MovementMode++;
+            if(MovementMode >= MovementMode_LAST)
+            {
+                MovementMode = 0;
+            }
+            delay(500);
+        }
+        if(controller.buttonSquare == 1)
+        {
+            buzzer.PlaySong(buzzer.Tetris);
+        }
 
         switch(MovementMode)
         {
