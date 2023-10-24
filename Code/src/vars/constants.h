@@ -20,13 +20,16 @@ class constants
         class led
         {
             public:
-            static uint16_t Frequency;
-            static uint8_t Red;
-            static uint8_t Green;
-            static uint8_t Blue;
-            static uint8_t Red_Channel;
-            static uint8_t Green_Channel;
-            static uint8_t Blue_Channel;
+            static uint16_t Interval;
+            static uint16_t BottomLEDsIntervalOff;
+            static uint16_t BottomLEDsIntervalOn;
+            static uint16_t BottomLEDsIntervalBetween;
+            static uint8_t Top;
+            static uint8_t Led1;
+            static uint8_t Led2;
+            static uint8_t Top_Channel;
+            static uint8_t Led1_Channel;
+            static uint8_t Led2_Channel;
         };
 
         class motor

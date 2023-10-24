@@ -2,33 +2,42 @@
 #include <Arduino.h>
 
 //@brief Firmware Version
-const char constants::version[] = "v0.3.0";
+const char constants::version[] = "v0.4.0";
 
 
 //@brief MCP3008 Chip Select Pin
 uint8_t constants::pins::mcp3008_cs = 17;
 
 
-//@brief The Frequency of the PWM signal
-uint16_t constants::pins::led::Frequency = 500;
+//@brief The Interval of the blinking in ms
+uint16_t constants::pins::led::Interval = 500;
 
-//@brief Red Pin of the RGB LED, has to be a PWM Pin
-uint8_t constants::pins::led::Red = 15;
+//@brief The Interval of the blinking in ms
+uint16_t constants::pins::led::BottomLEDsIntervalOn = 500;
 
-//@brief Green Pin of the RGB LED, has to be a PWM Pin
-uint8_t constants::pins::led::Green = 2;
+//@brief The Interval of the blinking in ms
+uint16_t constants::pins::led::BottomLEDsIntervalOff = 500;
 
-//@brief Blue Pin of the RGB LED, has to be a PWM Pin
-uint8_t constants::pins::led::Blue = 4;
+//@brief The Interval of the blinking in ms
+uint16_t constants::pins::led::BottomLEDsIntervalBetween = 750;
 
-//@brief ledc Channel for the Red Pin of the RGB LED
-uint8_t constants::pins::led::Red_Channel = 4;
+//@brief Pin of the big Top LEDs, has to be a PWM Pin
+uint8_t constants::pins::led::Top = 13;
 
-//@brief ledc Channel for the Green Pin of the RGB LED
-uint8_t constants::pins::led::Green_Channel = 5;
+//@brief Pin of one half of the body LEDs, has to be a PWM Pin
+uint8_t constants::pins::led::Led1 = 15;
 
-//@brief ledc Channel for the Blue Pin of the RGB LED
-uint8_t constants::pins::led::Blue_Channel = 6;
+//@brief Pin of the other half of the body LEDs, has to be a PWM Pin
+uint8_t constants::pins::led::Led2 = 2;
+
+//@brief ledc Channel for the big Top LED
+uint8_t constants::pins::led::Top_Channel = 14;
+
+//@brief ledc Channel for one half of the body LEDs
+uint8_t constants::pins::led::Led1_Channel = 15;
+
+//@brief ledc Channel for the other half of the body LEDs
+uint8_t constants::pins::led::Led2_Channel = 16;
 
 
 uint8_t constants::pins::motor::FrontLeft_Dir = 14;
@@ -69,13 +78,13 @@ bool constants::setValue(std::string key, String value)
     IPAddress ipaddress_value = IPAddress(ip_0, ip_1, ip_2, ip_3);
 
     if     (key == "pins::mcp3008_cs")                      { constants::pins::mcp3008_cs = uint8_t_value; }
-    else if(key == "pins::led::Frequency")                  { constants::pins::led::Frequency = uint8_t_value; }
-    else if(key == "pins::led::Red")                        { constants::pins::led::Red = uint8_t_value; }
-    else if(key == "pins::led::Green")                      { constants::pins::led::Green = uint8_t_value; }
-    else if(key == "pins::led::Blue")                       { constants::pins::led::Blue = uint8_t_value; }
-    else if(key == "pins::led::Red_Channel")                { constants::pins::led::Red_Channel = uint8_t_value; }
-    else if(key == "pins::led::Green_Channel")              { constants::pins::led::Green_Channel = uint8_t_value; }
-    else if(key == "pins::led::Blue_Channel")               { constants::pins::led::Blue_Channel = uint8_t_value; }
+    else if(key == "pins::led::Interval")                   { constants::pins::led::Interval = uint8_t_value; }
+    else if(key == "pins::led::Top")                        { constants::pins::led::Top = uint8_t_value; }
+    else if(key == "pins::led::Led1")                       { constants::pins::led::Led1 = uint8_t_value; }
+    else if(key == "pins::led::Led2")                       { constants::pins::led::Led2 = uint8_t_value; }
+    else if(key == "pins::led::Top_Channel")                { constants::pins::led::Top_Channel = uint8_t_value; }
+    else if(key == "pins::led::Led1_Channel")               { constants::pins::led::Led1_Channel = uint8_t_value; }
+    else if(key == "pins::led::Led2_Channel")               { constants::pins::led::Led2_Channel = uint8_t_value; }
     else if(key == "pins::motor::FrontLeft_Dir")            { constants::pins::motor::FrontLeft_Dir = uint8_t_value; }
     else if(key == "pins::motor::FrontLeft_Speed")          { constants::pins::motor::FrontLeft_Speed = uint8_t_value; }
     else if(key == "pins::motor::FrontRight_Dir")           { constants::pins::motor::FrontRight_Dir = uint8_t_value; }
