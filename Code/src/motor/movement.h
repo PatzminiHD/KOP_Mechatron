@@ -29,6 +29,7 @@ class Movement
     Controller controller;
     uint16_t DIRECTION, SPEED;
     uint8_t MovementMode;
+    bool controllerButtonSelectPrev = false;
 
     void init()
     {
@@ -214,15 +215,15 @@ class Movement
 
         controller.loop();
 
-        if(controller.buttonSelect == 1)
+        if(controller.buttonSelect == 1 && controllerButtonSelectPrev == false)
         {
             MovementMode++;
             if(MovementMode >= MovementMode_LAST)
             {
                 MovementMode = 0;
             }
-            delay(500);
         }
+        controllerButtonSelectPrev = controller.buttonSelect == 1;
         if(controller.buttonSquare == 1)
         {
             buzzer.PlaySong(buzzer.Tetris);
@@ -292,5 +293,6 @@ class Movement
             DIRECTION = 0;
         }
         SPEED = map(sqrt(controller.joyLY*controller.joyLY + controller.joyLX*controller.joyLX), 0, 128, 0, MAX_MOTOR_SPEED);
+        Apply();
     }
 };
