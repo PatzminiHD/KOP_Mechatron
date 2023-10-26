@@ -2,11 +2,17 @@
 #include <Arduino.h>
 
 //@brief Firmware Version
-const char constants::version[] = "v0.4.0";
+const char constants::version[] = "v1.0.0";
 
 
 //@brief MCP3008 Chip Select Pin
 uint8_t constants::pins::mcp3008_cs = 17;
+
+//@brief SC-Card Chip Select Pin
+uint8_t constants::pins::sdcard_cs = 5;
+
+//@brief The path of the config file
+const char constants::sdcardIO::ConfigFilePath[] = "/config.txt";
 
 
 //@brief The Interval of the blinking in ms
@@ -45,7 +51,7 @@ uint8_t constants::pins::motor::FrontLeft_Speed = 27;
 uint8_t constants::pins::motor::FrontRight_Dir = 13;
 uint8_t constants::pins::motor::FrontRight_Speed = 12;
 uint8_t constants::pins::motor::BackLeft_Dir = 26;
-uint8_t constants::pins::motor::BackLeft_Speed = 25;
+uint8_t constants::pins::motor::BackLeft_Speed = 0;
 uint8_t constants::pins::motor::BackRight_Dir = 33;
 uint8_t constants::pins::motor::BackRight_Speed = 32;
 

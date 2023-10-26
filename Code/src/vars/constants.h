@@ -16,6 +16,8 @@ class constants
     {
         public:
         static uint8_t mcp3008_cs;
+        static uint8_t sdcard_cs;
+
         
         class led
         {
@@ -51,6 +53,12 @@ class constants
             static uint8_t buzzer_pin;
             static uint8_t pwm_channel;
         };
+    };
+
+    class sdcardIO
+    {
+        public:
+        static const char ConfigFilePath[];
     };
 
     class controller_vars
