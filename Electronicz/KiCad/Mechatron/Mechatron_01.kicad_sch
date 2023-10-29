@@ -2422,6 +2422,10 @@
     (uuid fe483751-9aa3-4a02-964c-fed232926cf2)
   )
 
+  (text "Trennbar durch Hauptschalter" (at 62.23 33.02 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 01584712-309d-431a-bec9-f1464e736254)
+  )
   (text "Echo\nTrigger\nGND\nVCC" (at 131.9784 120.523 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 0da710bc-dbbf-40eb-bf19-9e9598f82d81)
@@ -2433,6 +2437,11 @@
   (text "VCC\nGND\nRotation\nPWM" (at 36.957 58.6232 0)
     (effects (font (size 1.27 1.27)) (justify right bottom))
     (uuid 4da3b999-a6e5-49d8-af75-dafb48510279)
+  )
+  (text "Low Passfilter and amplifier\nbetween Esp and In R and L"
+    (at 40.64 104.14 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 51526670-f1f9-4687-9205-b9e0f8d69b7b)
   )
   (text "VCC\nGND\nRotation\nPWM" (at 37.1856 70.0024 0)
     (effects (font (size 1.27 1.27)) (justify right bottom))
@@ -2969,8 +2978,8 @@
     (pin "5" (uuid ba65313e-8355-4faa-82a5-e4933c4f904c))
     (pin "8" (uuid c15051c8-e03a-4398-bcf7-c6e811172fb7))
     (pin "9" (uuid ae906a2a-8148-4f3d-b4e4-6e933bd82d4b))
-    (pin "GND" (uuid f7ed0ec3-d45f-4643-a08f-b45abb34f0e8))
-    (pin "GND" (uuid f7ed0ec3-d45f-4643-a08f-b45abb34f0e8))
+    (pin "GND" (uuid f7ed0ec3-d45f-4643-a08f-b45abb34f0e9))
+    (pin "GND" (uuid f7ed0ec3-d45f-4643-a08f-b45abb34f0e9))
     (pin "VIN" (uuid 1aa8e6c1-c67a-4856-9afc-07dcf75ee1cb))
     (instances
       (project "Mechatron_01"
@@ -2996,10 +3005,10 @@
     (property "Datasheet" "" (at 100.5078 32.131 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "" (uuid a7e4383f-23f8-4011-878f-7b51d9b6a2bc))
-    (pin "" (uuid a7e4383f-23f8-4011-878f-7b51d9b6a2bc))
-    (pin "" (uuid a7e4383f-23f8-4011-878f-7b51d9b6a2bc))
-    (pin "" (uuid a7e4383f-23f8-4011-878f-7b51d9b6a2bc))
+    (pin "" (uuid a7e4383f-23f8-4011-878f-7b51d9b6a2bf))
+    (pin "" (uuid a7e4383f-23f8-4011-878f-7b51d9b6a2bf))
+    (pin "" (uuid a7e4383f-23f8-4011-878f-7b51d9b6a2bf))
+    (pin "" (uuid a7e4383f-23f8-4011-878f-7b51d9b6a2bf))
     (instances
       (project "Mechatron_01"
         (path "/582de77e-8ad8-4f99-9634-2e14a1116267"
