@@ -59,6 +59,14 @@ uint8_t constants::pins::motor::BackRight_Speed = 32;
 uint8_t constants::pins::buzzer::buzzer_pin = 5;
 uint8_t constants::pins::buzzer::pwm_channel = 7;
 
+uint8_t constants::pins::uss::Trigger = 25;
+uint8_t constants::pins::uss::Front_Sens = 36;
+uint8_t constants::pins::uss::FrontLeft_Sens = 39;
+uint8_t constants::pins::uss::BackLeft_Sens = 34;
+uint8_t constants::pins::uss::Back_Sens = 35;
+uint8_t constants::pins::uss::BackRight_Sens = 32;
+uint8_t constants::pins::uss::FrontRight_Sens = 33;
+
 
 std::string constants::controller_vars::BT_ADDR = "8C:7C:B5:5F:3B:64";
 

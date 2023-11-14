@@ -53,6 +53,17 @@ class constants
             static uint8_t buzzer_pin;
             static uint8_t pwm_channel;
         };
+        class uss
+        {
+            public:
+            static uint8_t Trigger;
+            static uint8_t Front_Sens;
+            static uint8_t FrontLeft_Sens;
+            static uint8_t BackLeft_Sens;
+            static uint8_t Back_Sens;
+            static uint8_t BackRight_Sens;
+            static uint8_t FrontRight_Sens;
+        };
     };
 
     class sdcardIO
