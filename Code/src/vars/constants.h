@@ -66,6 +66,13 @@ class constants
         };
     };
 
+    class uss
+    {
+        public:
+        static uint8_t FrontBack_Min_Distance;
+        static uint8_t Side_Min_Distance;
+    };
+
     class sdcardIO
     {
         public:

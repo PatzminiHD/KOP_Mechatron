@@ -67,6 +67,9 @@ uint8_t constants::pins::uss::Back_Sens = 35;
 uint8_t constants::pins::uss::BackRight_Sens = 32;
 uint8_t constants::pins::uss::FrontRight_Sens = 33;
 
+uint8_t constants::uss::FrontBack_Min_Distance = 15;
+uint8_t constants::uss::Side_Min_Distance = 20;
+
 
 std::string constants::controller_vars::BT_ADDR = "8C:7C:B5:5F:3B:64";
 
