@@ -1,0 +1,3 @@
+Prusa MK4 0.4 nozzle;
+Generic PLA;
+0.20mm Quality;
