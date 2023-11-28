@@ -1,3 +1,4 @@
 Prusa MK4 0.4 nozzle;
 Generic PLA;
 0.20mm Quality;
+Stepper Connection: Diameter: 5.2mm; 4.7mmm
