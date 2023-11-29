@@ -1,4 +1,6 @@
 #include <LiquidCrystal_I2C.h>
+#include <ArduinoSTL.h>
+//#include <List.hpp>
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 byte Cursor[] = {
@@ -17,46 +19,52 @@ class Display
     private:
         void UpdateDisplay()
         {
-            if(line0prev != line0)
+            if(cursorPos < 4)
             {
-                lcd.setCursor(1, 0);
-                lcd.print(line0.substring(0, 19));
-                for (uint8_t i = line0.length(); i < 20; i++)
+                Serial.println("Cursor Pos= " + (String)cursorPos + " < 4");
+                Serial.println("menuEntries Size = " + (String)menuEntries.size());
+                
+                for (uint8_t i = 0; i < 4; i++)
                 {
-                    lcd.print(" ");
+                    if(i < menuEntries.size())
+                    {
+                        lines[i] = menuEntries[i];
+                    }
+                    else
+                    {
+                        lines[i] = "";
+                    }
+                    Serial.println("Line" + (String)i + " = " + lines[i]);
                 }
-                line0prev = line0;
             }
-            if(line1prev != line1)
+            else
             {
-                lcd.setCursor(1, 1);
-                lcd.print(line1.substring(0, 19));
-                for (uint8_t i = line1.length(); i < 20; i++)
+                Serial.println("Cursor Pos= " + (String)cursorPos + " >= 4");
+                uint8_t tmp = 0;
+                for (uint8_t i = cursorPos; i < cursorPos + 4; i++)
                 {
-                    lcd.print(" ");
+                    if(i < menuEntries.size())
+                        lines[tmp] = menuEntries[i];
+                    else
+                        lines[tmp] = "";
+                    tmp++;
                 }
-                line1prev = line1;
+                
             }
-            if(line2prev != line2)
+            for (uint8_t i = 0; i < 4; i++)
             {
-                lcd.setCursor(1, 2);
-                lcd.print(line2.substring(0, 19));
-                for (uint8_t i = line2.length(); i < 20; i++)
+                if(linesPrev[i] != lines[i])
                 {
-                    lcd.print(" ");
+                    lcd.setCursor(1, i);
+                    lcd.print(lines[i].substring(0, 19));
+                    for (uint8_t i = lines[i].length(); i < 20; i++)
+                    {
+                        lcd.print(" ");
+                    }
+                    linesPrev[i] = lines[i];
                 }
-                line2prev = line2;
             }
-            if(line3prev != line3)
-            {
-                lcd.setCursor(1, 3);
-                lcd.print(line3.substring(0, 19));
-                for (uint8_t i = line3.length(); i < 20; i++)
-                {
-                    lcd.print(" ");
-                }
-                line3prev = line3;
-            }
+            
             if(cursorPosPrev != cursorPos)
             {
                 lcd.setCursor(0, 0);
@@ -67,30 +75,35 @@ class Display
                 lcd.print(" ");
                 lcd.setCursor(0, 3);
                 lcd.print(" ");
-                lcd.setCursor(0, cursorPos);
+                if(cursorPos < 4)
+                    lcd.setCursor(0, cursorPos);
+                else
+                    lcd.setCursor(0, 3);
                 lcd.write(0);
                 cursorPosPrev = cursorPos;
             }
         }
 
-        String line0prev, line1prev, line2prev, line3prev;
+        String linesPrev[4];
         uint8_t cursorPosPrev;
     public:
-        String line0, line1, line2, line3;
+        std::vector<String> menuEntries;
+        String lines[4];
         uint8_t cursorPos;
         Display()
         {
             cursorPos = 0;
             cursorPosPrev = 1;
 
-            line0 = "";
-            line1 = "";
-            line2 = "";
-            line3 = "";
-            line0prev = " ";
-            line1prev = " ";
-            line2prev = " ";
-            line3prev = " ";
+            menuEntries.clear();
+        }
+
+        void UpdateInt(size_t * variable, uint8_t stepSize, String varName)
+        {
+            Clear();
+            lines[0] = "  Update  Variable  ";
+            lines[1] = "--------------------";
+            lines[3] = varName + " = " + (String)*variable;
         }
 
         void init()
@@ -100,8 +113,24 @@ class Display
             lcd.createChar(0, Cursor);
         }
 
+        void Clear()
+        {
+            //menuEntries.clear();
+            Update();
+        }
+
         void Update()
         {
+            /*if(cursorPos > menuEntries.getSize() - 1)
+            {
+                cursorPos = menuEntries.getSize() - 1;
+            }*/
+
+            if(cursorPos < 4)
+            {
+                
+            }
+
             UpdateDisplay();
         }
 };
