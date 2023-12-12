@@ -3,7 +3,7 @@
 
 
 #define STEPPER_MAX_SPEED        2     //Maximum Speed in Rotations per second
-#define STEPPER_MAX_ACCELERATION 20     //Maximum Acceleration in Full Steps per second per second
+#define STEPPER_MAX_ACCELERATION 5     //Maximum Acceleration in Full Steps per second per second
 
 #define STEPPER_MAX_FULL_STEPS_PER_SECOND STEPPER_FULL_STEPS_IN_FULL_ROTATION*STEPPER_MAX_SPEED
 
@@ -55,11 +55,16 @@ class Stepper
             _movementMode = moveMode;
             targetSpeed = 0;
             targetDirection = false;
-            setMovementMode();
+            UpdateMovementMode();
         }
 
         void ReachSpeedTarget()
         {
+
+            if(targetSpeed > STEPPER_MAX_FULL_STEPS_PER_SECOND * _movementMode)
+            {
+                targetSpeed = STEPPER_MAX_FULL_STEPS_PER_SECOND * _movementMode;
+            }
             if(targetDirection != _currDirection) //Decelerate to 0, then switch direction
             {
                 Serial.println("\nDecelerate for direction change\nCurr Dir: " + (String)_currDirection);
@@ -99,16 +104,23 @@ class Stepper
             }
         }
 
+        void SetSpeed(uint16_t degreesPerSecond)
+        {
+            targetSpeed = (degreesPerSecond / 360) * STEPPER_FULL_STEPS_IN_FULL_ROTATION * _movementMode;
+        }
+
         void MakeStep()
         {
-            Serial.print("#");
             digitalWrite(_stepPin, HIGH);
             delayMicroseconds(1);
             digitalWrite(_stepPin, LOW);
         }
         
-        void setMovementMode()
+        void UpdateMovementMode()
         {
+            uint16_t targetSpeedPrev = targetSpeed;
+            targetSpeed = 0;
+            ReachSpeedTarget();
             switch(_movementMode)
             {
                 case MOVEMENT_MODE_FULL:
@@ -117,9 +129,9 @@ class Stepper
                     digitalWrite(_m2Pin, LOW);
                     break;
                 case MOVEMENT_MODE_HALF:
-                    digitalWrite(_m0Pin, LOW);
+                    digitalWrite(_m0Pin, HIGH);
                     digitalWrite(_m1Pin, LOW);
-                    digitalWrite(_m2Pin, HIGH);
+                    digitalWrite(_m2Pin, LOW);
                     break;
                 case MOVEMENT_MODE_QUARTER:
                     digitalWrite(_m0Pin, LOW);
@@ -127,14 +139,14 @@ class Stepper
                     digitalWrite(_m2Pin, LOW);
                     break;
                 case MOVEMENT_MODE_EIGTH:
-                    digitalWrite(_m0Pin, LOW);
+                    digitalWrite(_m0Pin, HIGH);
                     digitalWrite(_m1Pin, HIGH);
-                    digitalWrite(_m2Pin, HIGH);
+                    digitalWrite(_m2Pin, LOW);
                     break;
                 case MOVEMENT_MODE_SIXTEENTH:
                     digitalWrite(_m0Pin, HIGH);
-                    digitalWrite(_m1Pin, LOW);
-                    digitalWrite(_m2Pin, LOW);
+                    digitalWrite(_m1Pin, HIGH);
+                    digitalWrite(_m2Pin, HIGH);
                     break;
 
                 default:    //Set to full step
@@ -143,5 +155,7 @@ class Stepper
                     digitalWrite(_m2Pin, LOW);
                     break;
             }
+            targetSpeed = targetSpeedPrev;
+            ReachSpeedTarget();
         }
 };
