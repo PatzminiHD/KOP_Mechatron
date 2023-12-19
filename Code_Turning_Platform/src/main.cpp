@@ -1,8 +1,14 @@
 #include <Arduino.h>
 #include "stepper.h"
 #include "display.h"
+#include <LiquidCrystal_I2C.h>
 
-Stepper stepper(0, 0, 0, 0, 0, Stepper::MOVEMENT_MODE_FULL);
+const uint8_t stepperPins[5] = {
+  11, 9, 2, 3, 4
+};
+
+
+Stepper stepper(stepperPins[0], stepperPins[1], stepperPins[2], stepperPins[3], stepperPins[4], Stepper::MOVEMENT_MODE_SIXTEENTH);
 Display display;
 
 void setup() {
@@ -20,18 +26,28 @@ void setup() {
   TIMSK1 |= (1 << OCIE1A); //Enable timer compare interrupt
   sei(); //Allow interrupts
 
-  display.init();
+  for (uint8_t i = 0; i < 5; i++)
+  {
+    pinMode(stepperPins[i], OUTPUT);
+  }
+  
 
-  display.line0 = "Line0";
-  display.line1 = "Line1, but its longer then the line";
-  display.line2 = "Line2";
-  display.line3 = "Last line";
+  /*display.init();
 
-  stepper.targetSpeed = 200;
-  stepper.ReachSpeedTarget();
-  stepper.targetDirection = !stepper.targetDirection;
-  stepper.ReachSpeedTarget();
-  stepper.targetSpeed = 0;
+  display.menuEntries.push_back("Hello World!");
+  display.menuEntries.push_back("does this work?");
+  display.menuEntries.push_back("I don't know, but I");
+  display.menuEntries.push_back("don't think so");
+  display.menuEntries.push_back("Line 5");
+  display.menuEntries.push_back("Line 6");
+  display.menuEntries.push_back("Line 7");
+  display.menuEntries.push_back("Line 8");
+  display.menuEntries.push_back("Line 9");
+  display.menuEntries.push_back("Line 10");
+  display.menuEntries.push_back("Line 11");
+
+  display.Update();*/
+  stepper.targetSpeed = 25 * stepper._movementMode;
   stepper.ReachSpeedTarget();
 }
 
