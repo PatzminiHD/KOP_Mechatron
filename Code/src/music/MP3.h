@@ -1,4 +1,5 @@
 #include <SD.h>
+#include <SPIFFS.h>
 #include <esp_log.h>
 #include <freertos/task.h>
 #include <DACOutput.h>
@@ -7,7 +8,9 @@
 #define MINIMP3_NO_STDIO
 #include "minimp3.h"
 
-#define MAX_MP3_VOLUME = 4096
+#define MP3_MAX_VOLUME = 4096
+#define MP3_SPIFFS_FILE_NAME "/intern.mp3"
+#define MP3_MAX_INTERNAL_FILE_SIZE 2097152 // 2 * 1024 * 1024
 
 // Played Audio has to have a Constant Bitrate of 16kbps, Joint Stereo,
 // with a sample rate of 16000Hz, and is played with a speed multiplier of 2.770
@@ -17,6 +20,36 @@ class MP3
 {
     private:
     static const int BUFFER_SIZE = 8192;
+
+    static bool LoadToIPFS(std::string sourceFileName)
+    {
+        Serial.println(("Loading " + sourceFileName + " to SPIFFS...").c_str());
+        File sourceFile = SD.open(sourceFileName.c_str());
+        Serial.print("Filesize: ");
+        Serial.println(sourceFile.size());
+
+        if(sourceFile.size() > MP3_MAX_INTERNAL_FILE_SIZE)
+        {
+            Serial.println("File too big!");
+            return false;
+        }
+
+        SPIFFS.remove(MP3_SPIFFS_FILE_NAME);
+        File destFile = SPIFFS.open(MP3_SPIFFS_FILE_NAME, FILE_WRITE);
+
+        static uint8_t buf[1024];
+        while(sourceFile.read(buf, 1024))
+        {
+            destFile.write(buf, 1024);
+        }
+
+        sourceFile.close();
+        destFile.close();
+
+        Serial.println("Loading finished!");
+
+        return true;
+    }
 
     public:
     static std::string mp3File;
@@ -36,6 +69,12 @@ class MP3
         {
             ESP_LOGE("MP3", "Failed to allocate input_buf memory");
         }
+
+        /*if(LoadToIPFS(mp3File))
+        {
+            mp3File = MP3_SPIFFS_FILE_NAME;
+        }*/
+
         while (true)
         {
             // mp3 decoder state
@@ -47,8 +86,18 @@ class MP3
             int buffered = 0;
             int decoded = 0;
             bool is_output_started = false;
-            // this assumes that you have uploaded the mp3 file to the SPIFFS
-            FILE *fp = fopen(("/sd/" + mp3File).c_str(), "r");
+            
+            FILE *fp;
+            /*if(mp3File == MP3_SPIFFS_FILE_NAME)
+            {
+                fp = fopen(("/spiffs" + mp3File).c_str(), "r");
+            }
+            else
+            {
+                fp = fopen(("/sd" + mp3File).c_str(), "r");
+            }*/
+            fp = fopen(("/sd" + mp3File).c_str(), "r");
+
             if (!fp)
             {
                 ESP_LOGE("MP3", "Failed to open file");
