@@ -444,7 +444,7 @@
       "idf": "",
       "netlist": "../../../../../../../../Program Files/KiCad/7.0/bin/",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Mechatron_01.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
