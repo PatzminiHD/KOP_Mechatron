@@ -6,7 +6,7 @@
 #define STEPPER_MAX_ACCELERATION 5     //Maximum Acceleration in Full Steps per second per second
 
 #define STEPPER_MAX_FULL_STEPS_PER_SECOND STEPPER_FULL_STEPS_IN_FULL_ROTATION*STEPPER_MAX_SPEED
-3
+
 class Stepper
 {
     private:

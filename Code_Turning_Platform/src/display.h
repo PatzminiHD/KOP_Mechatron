@@ -1,7 +1,9 @@
+#include "rotary_encoder/rotary_encoder.h"
 #include <LiquidCrystal_I2C.h>
 #include <ArduinoSTL.h>
-//#include <List.hpp>
+
 LiquidCrystal_I2C lcd(0x27, 20, 4);
+RotaryEncoder rotaryEncoder;
 
 byte Cursor[] = {
   0b01000,
@@ -12,6 +14,12 @@ byte Cursor[] = {
   0b00100,
   0b01000,
   0b00000
+};
+
+struct DisplayEntry
+{
+    String line;
+    void (*func)(void);
 };
 
 class Display
@@ -28,7 +36,7 @@ class Display
                 {
                     if(i < menuEntries.size())
                     {
-                        lines[i] = menuEntries[i];
+                        lines[i] = menuEntries[i].line;
                     }
                     else
                     {
@@ -41,53 +49,50 @@ class Display
             {
                 Serial.println("Cursor Pos= " + (String)cursorPos + " >= 4");
                 uint8_t tmp = 0;
-                for (uint8_t i = cursorPos; i < cursorPos + 4; i++)
+                for (uint8_t i = cursorPos - 3; i < cursorPos + 1; i++)
                 {
                     if(i < menuEntries.size())
-                        lines[tmp] = menuEntries[i];
+                        lines[tmp] = menuEntries[i].line;
                     else
                         lines[tmp] = "";
                     tmp++;
                 }
                 
             }
-            for (uint8_t i = 0; i < 4; i++)
-            {
-                if(linesPrev[i] != lines[i])
-                {
-                    lcd.setCursor(1, i);
-                    lcd.print(lines[i].substring(0, 19));
-                    for (uint8_t i = lines[i].length(); i < 20; i++)
-                    {
-                        lcd.print(" ");
-                    }
-                    linesPrev[i] = lines[i];
-                }
-            }
-            
-            if(cursorPosPrev != cursorPos)
-            {
-                lcd.setCursor(0, 0);
-                lcd.print(" ");
-                lcd.setCursor(0, 1);
-                lcd.print(" ");
-                lcd.setCursor(0, 2);
-                lcd.print(" ");
-                lcd.setCursor(0, 3);
-                lcd.print(" ");
-                if(cursorPos < 4)
-                    lcd.setCursor(0, cursorPos);
-                else
-                    lcd.setCursor(0, 3);
-                lcd.write(0);
-                cursorPosPrev = cursorPos;
-            }
+            UpdateLines();
         }
 
-        String linesPrev[4];
+        void UpdateLines()
+        {
+            for (uint8_t i = 0; i < 4; i++)
+            {
+                lcd.setCursor(1, i);
+                lcd.print(lines[i].substring(0, 19));
+                for (uint8_t j = lines[i].length(); j < 19; j++)
+                {
+                    lcd.print(" ");
+                }
+            }
+
+            lcd.setCursor(0, 0);
+            lcd.print(" ");
+            lcd.setCursor(0, 1);
+            lcd.print(" ");
+            lcd.setCursor(0, 2);
+            lcd.print(" ");
+            lcd.setCursor(0, 3);
+            lcd.print(" ");
+            if(cursorPos < 4)
+                lcd.setCursor(0, cursorPos);
+            else
+                lcd.setCursor(0, 3);
+            lcd.write(0);
+            cursorPosPrev = cursorPos;
+        }
+
         uint8_t cursorPosPrev;
     public:
-        std::vector<String> menuEntries;
+        std::vector<DisplayEntry> menuEntries;
         String lines[4];
         uint8_t cursorPos;
         Display()
@@ -100,10 +105,23 @@ class Display
 
         void UpdateInt(size_t * variable, uint8_t stepSize, String varName)
         {
+            Serial.println("Update Int");
             Clear();
+            cursorPos = 3;
             lines[0] = "  Update  Variable  ";
             lines[1] = "--------------------";
-            lines[3] = varName + " = " + (String)*variable;
+            rotaryEncoder.buttonPressed = false;
+            while(!rotaryEncoder.buttonPressed)
+            {
+                Serial.println("Update Loop");
+                lines[3] = varName + " = " + (String)*variable;
+                UpdateLines();
+                while(rotaryEncoder.movesToMake == 0 && !rotaryEncoder.buttonPressed) { ; }
+                Serial.println("Changed");
+                variable += rotaryEncoder.movesToMake * stepSize;
+                rotaryEncoder.movesToMake = 0;
+            }
+            rotaryEncoder.buttonPressed = false;
         }
 
         void init()
@@ -111,26 +129,48 @@ class Display
             lcd.init();
             lcd.backlight();
             lcd.createChar(0, Cursor);
+            rotaryEncoder.init(2, 4, 3);
+        }
+
+        void loop()
+        {
+            if(RotaryEncoder::movesToMake != 0)
+            {
+                if(RotaryEncoder::movesToMake < 0 && cursorPos + RotaryEncoder::movesToMake >= 0)
+                {
+                    cursorPos += RotaryEncoder::movesToMake;
+                    Update();
+                }
+                else if (RotaryEncoder::movesToMake > 0)
+                {
+                    cursorPos += RotaryEncoder::movesToMake;
+                    Update();
+                }
+                RotaryEncoder::movesToMake = 0;
+                delay(2);
+            }
+
+            if(RotaryEncoder::buttonPressed)
+            {
+                RotaryEncoder::buttonPressed = false;
+                menuEntries[cursorPos].func();
+                delay(2);
+            }
         }
 
         void Clear()
         {
-            //menuEntries.clear();
+            cursorPos = 0;
+            menuEntries.clear();
             Update();
         }
 
         void Update()
         {
-            /*if(cursorPos > menuEntries.getSize() - 1)
+            if(cursorPos > menuEntries.size() - 1)
             {
-                cursorPos = menuEntries.getSize() - 1;
-            }*/
-
-            if(cursorPos < 4)
-            {
-                
+                cursorPos = menuEntries.size() - 1;
             }
-
             UpdateDisplay();
         }
 };
