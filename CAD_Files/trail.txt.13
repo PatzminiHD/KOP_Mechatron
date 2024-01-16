@@ -1,0 +1,144 @@
+﻿!trail file version No. 1990
+!Creo  TM  8.0  (c) 2024 by PTC Inc.  All Rights Reserved.
+!Exit Logger data:
+!	Process ID: 12760
+!	Application: Creo_Parametric
+!	Start date&time: 2024/01/16  08:09:37
+!	language: german
+!	machine type: x86e_win64
+!	datecode: 8.0.0.0
+!	Server: NONE
+!	Workspace: NONE
+!	traceback file: C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\traceback.log
+!end Exit Logger data.
+< 0 1.620148 2550 0 0 1367 2560 0 0 1440 13
+!mem_use INCREASE Blocks 931889, AppSize 15636722, SysSize 36632344
+< 0 1.110000 1110 0 0 1000 2560 0 0 1440 13
+< 0 1.114000 1114 0 0 1000 2560 0 0 1440 13
+< 0 1.114000 1114 0 0 1004 2560 0 0 1440 13
+< 0 1.114000 1114 0 0 1008 2560 0 0 1440 13
+< 0 1.058000 1058 0 0 1008 2560 0 0 1440 13
+< 0 1.249185 2280 0 0 1054 2560 0 0 1440 13
+< 0 1.249185 2219 0 0 1054 2560 0 0 1440 13
+!%CIWillkommen bei Creo Parametric Educational Edition 8.0.0.0.
+!AFX datecode: 8.0.0.0-rc.1 2020.11.23
+!AFX exec path: C:\Program Files\PTC\Creo 8.0.0.0\Common Files\afx\x86e_win64\afx80.dll
+!AFX text path: C:\Program Files\PTC\Creo 8.0.0.0\Common Files\afx\
+< 0 1.242074 2219 0 0 1048 2560 0 0 1440 13
+!mem_use INCREASE Blocks 1009543, AppSize 47142762, SysSize 70048312
+#ASSEMBLY
+#RETRIEVE
+!%CPObjektname eingeben: 
+!%TR
+C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\assambly.asm.22
+< 2 0.118519 178 0 0 100 2560 0 0 1440 13
+~ Trail `UI Desktop` `UI Desktop` `DLG_PREVIEW_POST` \
+ `file_open`
+!Command ProCmdModelOpenExe was pushed from the software.
+!16-Jan-24 08:09:45  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\assambly.asm.22
+!LIGHT_FIX_MODEL_RMODE is 51
+!16-Jan-24 08:09:45  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\drehleiter_unterer_aufbau_v04.prt.73
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\drehleiter_unterer_aufbau_v04.prt.73
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\sitz_drehleiter.prt.27
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\sitz_drehleiter.prt.27
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\geländer_drehleiter.prt.11
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\geländer_drehleiter.prt.11
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\drehleiter_unten_aggregat.prt.26
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\drehleiter_unten_aggregat.prt.26
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\bildschrim_drehleiter_unten.prt.20
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\bildschrim_drehleiter_unten.prt.20
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\servo.prt.7
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\servo.prt.7
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\servo_adapter_v00.prt.7
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\servo_adapter_v00.prt.7
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\drehleiter_oberer_aufbau_v03.prt.45
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\drehleiter_oberer_aufbau_v03.prt.45
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\zahnrad_treibend.prt.25
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\zahnrad_treibend.prt.25
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\zahnrad_getrieben.prt.17
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\zahnrad_getrieben.prt.17
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\verbindungswelle_oben-unten.prt.3
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\verbindungswelle_oben-unten.prt.3
+!16-Jan-24 08:09:46  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\servo_motor_360.prt.5
+!16-Jan-24 08:09:46  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\servo_motor_360.prt.5
+!%CDZeile 2 Baugruppe ASSAMBLY: Modell hat sich seit Masseneigenschaftsberechnung geändert; muss u.U. neu berechnet werden.
+!ProgressBarDlg: Regen Started
+!%CERegenerierung des KEs fehlgeschlagen.
+!%CIASSAMBLY Regenerierung abgeschlossen mit atypischem KE- oder Komponentenstatus. Fehlgeschlagen: 1. 
+!ProgressBarDlg: Regen Completed
+!16-Jan-24 08:09:48  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\assambly.asm.22
+!%CWMit dieser Trainingsversion von Creo Parametric erzeugte Objekte sind nicht
+!%C_kompatibel mit kommerziell lizenzierter Creo Parametric Software.
+@ oa_sel_filter_set _30_
+!mem_use INCREASE Blocks 1363281, AppSize 58935662, SysSize 96392768
+@ stack attr 2
+!MT_CUST - Applied settings for mode # 6 : MT Asm Design
+< 0 1.242074 2206 0 0 1048 2560 0 0 1440 13
+< 0 1.242074 2183 0 0 1048 2560 0 0 1440 13
+!Command ProCmdInfoNmgrLightDlg was pushed from the software.
+~ Wheel `main_dlg_cur` `proe_win` 9 1310 687 393216 0 2183 1048 2560 1440 15277
+~ Wheel `main_dlg_cur` `proe_win` 9 1310 687 393216 0 2183 1048 2560 1440 15381
+~ Wheel `main_dlg_cur` `proe_win` 9 1252 671 393216 512 2183 1048 2560 1440 15513
+~ Wheel `main_dlg_cur` `proe_win` 9 860 601 458752 512 2183 1048 2560 1440 16132
+~ Wheel `main_dlg_cur` `proe_win` 9 905 572 458752 1536 2183 1048 2560 1440 16212
+~ MButtonArm `main_dlg_cur` `proe_win` 9 926 519 0 2 2183 1048 2560 1440 16497
+~ Move `main_dlg_cur` `proe_win` 9 930 519 0 514 2183 1048 2560 1440 16560
+~ Move `main_dlg_cur` `proe_win` 9 934 522 0 1538 2183 1048 2560 1440 16571
+~ Move `main_dlg_cur` `proe_win` 9 942 534 0 1538 2183 1048 2560 1440 16585
+~ Move `main_dlg_cur` `proe_win` 9 954 551 0 1538 2183 1048 2560 1440 16633
+~ Move `main_dlg_cur` `proe_win` 9 979 567 0 1538 2183 1048 2560 1440 16688
+~ Move `main_dlg_cur` `proe_win` 9 983 571 0 1538 2183 1048 2560 1440 16727
+~ Move `main_dlg_cur` `proe_win` 9 1000 575 0 1538 2183 1048 2560 1440 16765
+~ Move `main_dlg_cur` `proe_win` 9 1004 580 0 1538 2183 1048 2560 1440 16801
+~ Move `main_dlg_cur` `proe_win` 9 1016 580 0 514 2183 1048 2560 1440 16839
+~ Move `main_dlg_cur` `proe_win` 9 1029 596 0 1538 2183 1048 2560 1440 16877
+~ Move `main_dlg_cur` `proe_win` 9 1033 604 0 1538 2183 1048 2560 1440 16917
+~ Move `main_dlg_cur` `proe_win` 9 1041 604 0 514 2183 1048 2560 1440 16967
+~ Move `main_dlg_cur` `proe_win` 9 1049 604 0 514 2183 1048 2560 1440 17160
+~ Move `main_dlg_cur` `proe_win` 9 1103 604 0 514 2183 1048 2560 1440 17213
+~ Move `main_dlg_cur` `proe_win` 9 1144 604 0 514 2183 1048 2560 1440 17264
+~ Move `main_dlg_cur` `proe_win` 9 1185 604 0 514 2183 1048 2560 1440 17315
+~ Move `main_dlg_cur` `proe_win` 9 1214 601 0 1538 2183 1048 2560 1440 17366
+~ Move `main_dlg_cur` `proe_win` 9 1239 593 0 1538 2183 1048 2560 1440 17421
+~ Move `main_dlg_cur` `proe_win` 9 1280 585 0 1538 2183 1048 2560 1440 17491
+~ Move `main_dlg_cur` `proe_win` 9 1293 592 0 1538 2183 1048 2560 1440 17531
+~ Move `main_dlg_cur` `proe_win` 9 1305 592 0 514 2183 1048 2560 1440 17564
+~ Move `main_dlg_cur` `proe_win` 9 1317 592 0 514 2183 1048 2560 1440 17597
+~ Move `main_dlg_cur` `proe_win` 9 1338 592 0 514 2183 1048 2560 1440 17636
+~ Move `main_dlg_cur` `proe_win` 9 1363 589 0 1538 2183 1048 2560 1440 17676
+~ Move `main_dlg_cur` `proe_win` 9 1379 585 0 1538 2183 1048 2560 1440 17713
+~ Move `main_dlg_cur` `proe_win` 9 1392 585 0 514 2183 1048 2560 1440 17742
+~ Move `main_dlg_cur` `proe_win` 9 1416 585 0 514 2183 1048 2560 1440 17771
+~ Move `main_dlg_cur` `proe_win` 9 1437 585 0 514 2183 1048 2560 1440 17801
+~ Move `main_dlg_cur` `proe_win` 9 1458 580 0 1538 2183 1048 2560 1440 17829
+~ Move `main_dlg_cur` `proe_win` 9 1491 580 0 514 2183 1048 2560 1440 17869
+~ Move `main_dlg_cur` `proe_win` 9 1515 580 0 514 2183 1048 2560 1440 17913
+~ Move `main_dlg_cur` `proe_win` 9 1548 580 0 514 2183 1048 2560 1440 17958
+~ Move `main_dlg_cur` `proe_win` 9 1565 580 0 514 2183 1048 2560 1440 18002
+~ Move `main_dlg_cur` `proe_win` 9 1565 584 0 1026 2183 1048 2560 1440 18060
+~ Move `main_dlg_cur` `proe_win` 9 1573 584 0 514 2183 1048 2560 1440 18135
+~ Move `main_dlg_cur` `proe_win` 9 1581 596 0 1538 2183 1048 2560 1440 18175
+~ Move `main_dlg_cur` `proe_win` 9 1590 621 0 1538 2183 1048 2560 1440 18222
+~ Move `main_dlg_cur` `proe_win` 9 1598 666 0 1538 2183 1048 2560 1440 18277
+~ Move `main_dlg_cur` `proe_win` 9 1610 699 0 1538 2183 1048 2560 1440 18326
+~ Move `main_dlg_cur` `proe_win` 9 1610 707 0 1026 2183 1048 2560 1440 18374
+~ Move `main_dlg_cur` `proe_win` 9 1614 728 0 1538 2183 1048 2560 1440 18417
+~ Move `main_dlg_cur` `proe_win` 9 1619 745 0 1538 2183 1048 2560 1440 18453
+~ Move `main_dlg_cur` `proe_win` 9 1619 761 0 1026 2183 1048 2560 1440 18486
+~ Move `main_dlg_cur` `proe_win` 9 1619 769 0 1026 2183 1048 2560 1440 18524
+~ Move `main_dlg_cur` `proe_win` 9 1627 782 0 1538 2183 1048 2560 1440 18556
+~ Move `main_dlg_cur` `proe_win` 9 1627 786 0 1026 2183 1048 2560 1440 18586
+~ Move `main_dlg_cur` `proe_win` 9 1627 790 0 1026 2183 1048 2560 1440 18619
+~ Move `main_dlg_cur` `proe_win` 9 1627 794 0 1026 2183 1048 2560 1440 18653
+~ MButtonDisarm `main_dlg_cur` `proe_win` 9 1627 794 0 0 2183 1048 2560 1440 18821
+~ Close `main_dlg_cur` `main_dlg_cur`
+!Command ProCmdOSExit was pushed from the software.
+! Message Dialog: Warning
+!               : Creo Parametric Educational Edition wird beendet und nicht gespeicherte Arbeit geht verloren.
+!               : Möchten Sie das Programm wirklich beenden?
+~ Activate `UI Message Dialog` `yes`
+!%CPBaugruppe >> ASSAMBLY speichern ? [Ja]
+!%TR
+
+<ESC>  
+!End of Trail File
