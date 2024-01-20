@@ -4,7 +4,7 @@
 #include <LiquidCrystal_I2C.h>
 
 const uint8_t stepperPins[5] = {
-  11, 9, 2, 3, 4
+  7, 6, 10, 9, 8
 };
 
 
