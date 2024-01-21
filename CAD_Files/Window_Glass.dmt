@@ -5,7 +5,7 @@
 #
 #
 # material name
-material_name "ref_color2"
+material_name "ref_color188"
 # material label
 material_label "ptc-ceramic"
 # material description
@@ -59,7 +59,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color3"
+material_name "ref_color189"
 # material label
 material_label "ptc-fabric-leather"
 # material description
@@ -130,7 +130,7 @@ bump_map Leather-brown-bump.jpg
 # bump enabled
 bump_enabled 1
 # material name
-material_name "ref_color4"
+material_name "ref_color190"
 # material label
 material_label "ptc-glass"
 # material description
@@ -184,7 +184,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color5"
+material_name "ref_color191"
 # material label
 material_label "ptc-metallic-aluminium"
 # material description
@@ -236,7 +236,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color6"
+material_name "ref_color192"
 # material label
 material_label "ptc-metallic-blue"
 # material description
@@ -288,7 +288,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color7"
+material_name "ref_color193"
 # material label
 material_label "ptc-metallic-gold"
 # material description
@@ -340,7 +340,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color8"
+material_name "ref_color194"
 # material label
 material_label "ptc-metallic-steel-light"
 # material description
@@ -392,7 +392,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color9"
+material_name "ref_color195"
 # material label
 material_label "ptc-painted-green"
 # material description
@@ -445,7 +445,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color10"
+material_name "ref_color196"
 # material label
 material_label "ptc-painted-red"
 # material description
@@ -498,7 +498,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color11"
+material_name "ref_color197"
 # material label
 material_label "ptc-painted-yellow"
 # material description
@@ -551,7 +551,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color12"
+material_name "ref_color198"
 # material label
 material_label "ptc-stone-marble-purple"
 # material description
@@ -609,7 +609,7 @@ color_map marble-purple.tx3
 # texture enabled
 texture_enabled 1
 # material name
-material_name "ref_color13"
+material_name "ref_color199"
 # material label
 material_label "ptc-wood-elm"
 # material description
@@ -674,7 +674,7 @@ color_map elm-burl.tx3
 # texture enabled
 texture_enabled 1
 # material name
-material_name "ref_color14"
+material_name "ref_color200"
 # material label
 material_label "ptc-plastic-red"
 # material description
@@ -737,7 +737,7 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color15"
+material_name "ref_color201"
 # material label
 material_label "ptc-steel-brushed"
 # material description
@@ -806,7 +806,7 @@ bump_map Brushed-bump.jpg
 # bump enabled
 bump_enabled 1
 # material name
-material_name "ref_color107"
+material_name "ref_color202"
 # material label
 material_label "<ref_color1>"
 # material description
@@ -854,9 +854,9 @@ index_of_refraction 1.000000
 # fresnel reflections
 fresnel_reflections 0
 # material name
-material_name "ref_color108"
+material_name "ref_color203"
 # material label
-material_label "Window_Glas"
+material_label "window_glas"
 # material description
 material_description ""
 # material keywords
@@ -864,7 +864,7 @@ material_keywords ""
 shader_type glass_shader "generic_glass"
 color_param 0.959969 0.975394 0.995146 "refr_color"
 float_param 1.000000 "refr_gloss"
-float_param 0.970000 "transparency"
+float_param 0.500000 "transparency"
 float_param 1.480000 "refr_ior"
 shader_enabled 1
 # ambient color
@@ -902,7 +902,7 @@ color_tex_rotation 0.000000
 # decal_type
 decal_type 0
 # transparency
-transparency 0.970000
+transparency 0.500000
 # fresnel index of refraction
 index_of_refraction 1.000000
 # fresnel reflections
