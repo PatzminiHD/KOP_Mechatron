@@ -9,6 +9,8 @@ class uss
     uint8_t echoPin, triggerPin;
     uss(uint8_t _echoPin, uint8_t _triggerPin)
     {
+        pinMode(_echoPin, INPUT);
+        pinMode(_triggerPin, OUTPUT);
         this->echoPin = _echoPin;
         this->triggerPin = _triggerPin;
     }

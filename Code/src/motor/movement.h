@@ -2,6 +2,8 @@
 #include "../vars/constants.h"
 #include "../controller/controller.h"
 #include "../music/buzzer.h"
+#include "../led/led.h"
+#include "../ultrasonic-sensors/sensors.h"
 
 #define DIRECTION_FORWARDS  0
 #define DIRECTION_RIGHT     90
@@ -27,6 +29,8 @@ class Movement
 
     public:
     Controller controller;
+    Led led = Led();
+    Sensors sensors = Sensors();
     uint16_t DIRECTION, SPEED;
     uint8_t MovementMode;
     bool controllerButtonSelectPrev = false;
@@ -226,9 +230,8 @@ class Movement
         controllerButtonSelectPrev = controller.buttonSelect == 1;
         if(controller.buttonSquare == 1)
         {
-            buzzer.PlaySong(buzzer.Tetris);
+            Serial.println(sensors.CanGoFront());
         }
-
         switch(MovementMode)
         {
             case MovementMode_JoyLeft:

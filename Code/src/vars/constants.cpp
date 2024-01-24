@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 //@brief Firmware Version
-const char constants::version[] = "v1.0.0";
+const char constants::version[] = "v1.1.0";
 
 
 //@brief MCP3008 Chip Select Pin

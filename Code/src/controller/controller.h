@@ -4,7 +4,7 @@
 class Controller
 {
     public:
-    int8_t joyLX, joyLY, joyRX, joyRY, buttonSelect, buttonSquare;
+    int8_t joyLX, joyLY, joyRX, joyRY, buttonSelect, buttonSquare, dPadUp, dPadRight, dPadDown, dPadLeft, joyRButton, joyLButton;
     ps3_status_battery battery;
     uint8_t throttleGas, throttleBreake;
     unsigned long led_blink_millis;
@@ -22,6 +22,14 @@ class Controller
         joyLY = Ps3.data.analog.stick.ly;
         joyRX = Ps3.data.analog.stick.rx;
         joyRY = Ps3.data.analog.stick.ry;
+
+        dPadUp = Ps3.data.button.up;
+        dPadRight = Ps3.data.button.right;
+        dPadDown = Ps3.data.button.down;
+        dPadLeft = Ps3.data.button.left;
+
+        joyLButton = Ps3.data.button.l3;
+        joyRButton = Ps3.data.button.r3;
 
         battery = Ps3.data.status.battery;
         

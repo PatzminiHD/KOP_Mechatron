@@ -1,7 +1,7 @@
 #include "uss.h"
 #include "../vars/constants.h"
 
-class sensors
+class Sensors
 {
     private:
     uss Front      = uss(constants::pins::uss::Front_Sens,      constants::pins::uss::Trigger);
