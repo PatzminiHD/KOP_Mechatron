@@ -37,23 +37,23 @@ uint8_t constants::pins::led::Led1 = 15;
 uint8_t constants::pins::led::Led2 = 2;
 
 //@brief ledc Channel for the big Top LED
-uint8_t constants::pins::led::Top_Channel = 14;
+uint8_t constants::pins::led::Top_Channel = 4;
 
 //@brief ledc Channel for one half of the body LEDs
-uint8_t constants::pins::led::Led1_Channel = 15;
+uint8_t constants::pins::led::Led1_Channel = 5;
 
 //@brief ledc Channel for the other half of the body LEDs
-uint8_t constants::pins::led::Led2_Channel = 16;
+uint8_t constants::pins::led::Led2_Channel = 6;
 
 
-uint8_t constants::pins::motor::FrontLeft_Dir = 14;
-uint8_t constants::pins::motor::FrontLeft_Speed = 27;
-uint8_t constants::pins::motor::FrontRight_Dir = 13;
-uint8_t constants::pins::motor::FrontRight_Speed = 12;
-uint8_t constants::pins::motor::BackLeft_Dir = 26;
-uint8_t constants::pins::motor::BackLeft_Speed = 0;
-uint8_t constants::pins::motor::BackRight_Dir = 33;
-uint8_t constants::pins::motor::BackRight_Speed = 32;
+uint8_t constants::pins::motor::FrontLeft_Dir = 4;
+uint8_t constants::pins::motor::FrontLeft_Speed = 16;
+uint8_t constants::pins::motor::FrontRight_Dir = 17;
+uint8_t constants::pins::motor::FrontRight_Speed = 5;
+uint8_t constants::pins::motor::BackLeft_Dir = 21;
+uint8_t constants::pins::motor::BackLeft_Speed = 3;
+uint8_t constants::pins::motor::BackRight_Dir = 1;
+uint8_t constants::pins::motor::BackRight_Speed = 22;
 
 //@brief The Buzzer Pin
 uint8_t constants::pins::buzzer::buzzer_pin = 5;

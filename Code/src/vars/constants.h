@@ -45,6 +45,13 @@ class constants
             static uint8_t BackLeft_Speed;
             static uint8_t BackRight_Dir;
             static uint8_t BackRight_Speed;
+
+            static uint8_t ServoLowerPin;
+            static uint8_t ServoUpperPin;
+            static uint8_t ServoExtenderPin;
+
+            static uint8_t ServoExtenderLimitSwitchUpper_Pin;
+            static uint8_t ServoExtenderLimitSwitchLower_Pin;
         };
 
         class buzzer
