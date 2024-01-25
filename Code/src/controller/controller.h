@@ -4,7 +4,7 @@
 class Controller
 {
     public:
-    int8_t joyLX, joyLY, joyRX, joyRY, buttonSelect, buttonSquare, dPadUp, dPadRight, dPadDown, dPadLeft, joyRButton, joyLButton;
+    int8_t joyLX, joyLY, joyRX, joyRY, buttonSelect, buttonSquare, buttonCircle, buttonTriangle, dPadUp, dPadRight, dPadDown, dPadLeft, joyRButton, joyLButton;
     ps3_status_battery battery;
     uint8_t throttleGas, throttleBreake;
     unsigned long led_blink_millis;
@@ -23,21 +23,24 @@ class Controller
         joyRX = Ps3.data.analog.stick.rx;
         joyRY = Ps3.data.analog.stick.ry;
 
-        dPadUp = Ps3.data.button.up;
+        dPadUp    = Ps3.data.button.up;
         dPadRight = Ps3.data.button.right;
-        dPadDown = Ps3.data.button.down;
-        dPadLeft = Ps3.data.button.left;
+        dPadDown  = Ps3.data.button.down;
+        dPadLeft  = Ps3.data.button.left;
 
         joyLButton = Ps3.data.button.l3;
         joyRButton = Ps3.data.button.r3;
 
         battery = Ps3.data.status.battery;
         
-        throttleGas = Ps3.data.analog.button.l2;
+        throttleGas    = Ps3.data.analog.button.l2;
         throttleBreake = Ps3.data.analog.button.r2;
 
-        buttonSelect = Ps3.data.button.select;
-        buttonSquare = Ps3.data.button.square;
+        buttonSelect   = Ps3.data.button.select;
+        buttonSquare   = Ps3.data.button.square;
+        buttonCircle   = Ps3.data.button.circle;
+        buttonTriangle = Ps3.data.button.triangle;
+
 
         if(millis() - led_blink_millis > 250)
         {

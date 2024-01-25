@@ -15,9 +15,6 @@ class constants
     class pins
     {
         public:
-        static uint8_t mcp3008_cs;
-        static uint8_t sdcard_cs;
-
         
         class led
         {

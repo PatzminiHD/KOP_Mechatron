@@ -6,7 +6,6 @@
 
 Movement movement;
 
-
 std::string MP3::mp3File;
 int MP3::VOLUME;
 
@@ -15,14 +14,8 @@ void setup() {
   delay(500);
   Serial.println(("Firmware version: " + std::string(constants::version)).c_str());
   sdcardIO::MountCard();
-  //SPIFFS.begin();
   movement.init();
-  movement.SPEED = MAX_MOTOR_SPEED;
-  movement.DIRECTION = 0;
-  movement.Apply();
-  //MP3::mp3File = "/0.mp3";
-  //MP3::VOLUME = 2500;
-  //MP3::Play();
+  
 }
 
 // the loop function runs over and over again until power down or reset

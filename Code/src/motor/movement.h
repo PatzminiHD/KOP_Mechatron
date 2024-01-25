@@ -232,6 +232,13 @@ class Movement
         {
             Serial.println(sensors.CanGoFront());
         }
+        if(controller.buttonCircle == 1)
+        {
+            if(led.isBlinking)
+                led.StopBlink();
+            else
+                led.StartBlink();
+        }
         switch(MovementMode)
         {
             case MovementMode_JoyLeft:

@@ -12,7 +12,7 @@
 //@return 2: If no card is attached
 uint8_t sdcardIO::MountCard()
 {
-  if(!SD.begin(constants::pins::sdcard_cs))
+  if(!SD.begin(33))
   {
     //SD-Card mount failed
     return 1;

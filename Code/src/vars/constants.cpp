@@ -4,13 +4,6 @@
 //@brief Firmware Version
 const char constants::version[] = "v1.1.0";
 
-
-//@brief MCP3008 Chip Select Pin
-uint8_t constants::pins::mcp3008_cs = 17;
-
-//@brief SC-Card Chip Select Pin
-uint8_t constants::pins::sdcard_cs = 5;
-
 //@brief The path of the config file
 const char constants::sdcardIO::ConfigFilePath[] = "/config.txt";
 
@@ -52,7 +45,7 @@ uint8_t constants::pins::motor::FrontRight_Dir = 17;
 uint8_t constants::pins::motor::FrontRight_Speed = 5;
 uint8_t constants::pins::motor::BackLeft_Dir = 21;
 uint8_t constants::pins::motor::BackLeft_Speed = 3;
-uint8_t constants::pins::motor::BackRight_Dir = 1;
+uint8_t constants::pins::motor::BackRight_Dir = 32;
 uint8_t constants::pins::motor::BackRight_Speed = 22;
 
 //@brief The Buzzer Pin
@@ -94,8 +87,7 @@ bool constants::setValue(std::string key, String value)
     
     IPAddress ipaddress_value = IPAddress(ip_0, ip_1, ip_2, ip_3);
 
-    if     (key == "pins::mcp3008_cs")                      { constants::pins::mcp3008_cs = uint8_t_value; }
-    else if(key == "pins::led::Interval")                   { constants::pins::led::Interval = uint8_t_value; }
+    if     (key == "pins::led::Interval")                   { constants::pins::led::Interval = uint8_t_value; }
     else if(key == "pins::led::Top")                        { constants::pins::led::Top = uint8_t_value; }
     else if(key == "pins::led::Led1")                       { constants::pins::led::Led1 = uint8_t_value; }
     else if(key == "pins::led::Led2")                       { constants::pins::led::Led2 = uint8_t_value; }

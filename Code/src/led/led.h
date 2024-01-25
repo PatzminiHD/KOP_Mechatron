@@ -1,35 +1,78 @@
 #include <Arduino.h>
 #include "../vars/constants.h"
 
+#define LED_BLINK_DELAY 100
+
 class Led
 {
     private:
-    void led_top_on()
+    TaskHandle_t blinkLEDsTask;
+
+    static void led_top_on()
     {
         ledcWrite(constants::pins::led::Top_Channel, 255);
     }
-    void led_1_on()
+    static void led_1_on()
     {
         ledcWrite(constants::pins::led::Led1_Channel, 255);
     }
-    void led_2_on()
+    static void led_2_on()
     {
         ledcWrite(constants::pins::led::Led2_Channel, 255);
     }
-    void led_top_off()
+    static void led_top_off()
     {
         ledcWrite(constants::pins::led::Top_Channel, 0);
     }
-    void led_1_off()
+    static void led_1_off()
     {
         ledcWrite(constants::pins::led::Led1_Channel, 0);
     }
-    void led_2_off()
+    static void led_2_off()
     {
         ledcWrite(constants::pins::led::Led2_Channel, 0);
     }
+
+    static void BlinkLEDsTask(void * parameter)
+    {
+        bool topLedFlag = false;
+        while(!false)
+        {
+            led_1_on();
+            vTaskDelay(LED_BLINK_DELAY / portTICK_PERIOD_MS);
+            if(topLedFlag)
+                led_top_on();
+            led_1_off();
+            vTaskDelay(LED_BLINK_DELAY / portTICK_PERIOD_MS);
+            led_1_on();
+            vTaskDelay(LED_BLINK_DELAY / portTICK_PERIOD_MS);
+            if(topLedFlag)
+                led_top_off();
+            led_1_off();
+
+            vTaskDelay((LED_BLINK_DELAY * 2) / portTICK_PERIOD_MS);
+            
+            led_2_on();
+            vTaskDelay(LED_BLINK_DELAY / portTICK_PERIOD_MS);
+            if(!topLedFlag)
+                led_top_on();
+            led_2_off();
+            vTaskDelay(LED_BLINK_DELAY / portTICK_PERIOD_MS);
+            led_2_on();
+            vTaskDelay(LED_BLINK_DELAY / portTICK_PERIOD_MS);
+            if(!topLedFlag)
+                led_top_off();
+            led_2_off();
+
+            vTaskDelay((LED_BLINK_DELAY * 2) / portTICK_PERIOD_MS);
+
+            topLedFlag = !topLedFlag;
+        }
+    }
+
     public:
-    uint64_t prev_millis = 0;
+    bool isBlinking;
+    
     Led()
     {
         ledcSetup(constants::pins::led::Top_Channel, 500, 8);
@@ -40,21 +83,31 @@ class Led
         ledcAttachPin(constants::pins::led::Led2, constants::pins::led::Led2_Channel);
     }
 
-    void blink()
+    void StartBlink()
     {
-        Serial.print(millis());
-        Serial.println(": LED Blink");
-        led_top_on();
-        led_1_off();
-        led_2_on();
-        delay(250);
-        led_top_on();
-        led_1_on();
-        led_2_off();
-        delay(250);
+        if(isBlinking)
+            return;
+
+        xTaskCreatePinnedToCore(
+            BlinkLEDsTask,
+            "BlinkLEDsTask",
+            1000,
+            NULL,
+            0,
+            &blinkLEDsTask,
+            0);
+
+        isBlinking = false;
+    }
+
+    void StopBlink()
+    {
+        vTaskSuspend(blinkLEDsTask);
+        vTaskDelete(blinkLEDsTask);
+        
         led_top_off();
-        led_1_on();
-        led_2_on();
-        delay(250);
+        led_1_off();
+        led_2_off();
+        isBlinking = false;
     }
 };
