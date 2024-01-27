@@ -288,6 +288,20 @@ class Movement
 
     void HandleMovementModeJoyLeft()
     {
+        if(controller.joyRX < -10 || controller.joyRX > 10)
+        {
+            SPEED = map(abs(controller.joyRX), 0, 128, 0, MAX_MOTOR_SPEED);
+            if(controller.joyRX < 0)
+            {
+                TurnLeft();
+            }
+            else
+            {
+                TurnRight();
+            }
+            return;
+        }
+
         if(controller.joyLX != 0)
         {
             float tmp = atan(float(controller.joyLY) / float(controller.joyLX));

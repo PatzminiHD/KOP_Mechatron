@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 //@brief Firmware Version
-const char constants::version[] = "v1.1.0";
+const char constants::version[] = "v1.2.0";
 
 //@brief The path of the config file
 const char constants::sdcardIO::ConfigFilePath[] = "/config.txt";

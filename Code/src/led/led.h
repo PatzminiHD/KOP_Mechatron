@@ -81,6 +81,9 @@ class Led
         ledcAttachPin(constants::pins::led::Top, constants::pins::led::Top_Channel);
         ledcAttachPin(constants::pins::led::Led1, constants::pins::led::Led1_Channel);
         ledcAttachPin(constants::pins::led::Led2, constants::pins::led::Led2_Channel);
+        led_top_off();
+        led_1_off();
+        led_2_off();
     }
 
     void StartBlink()
