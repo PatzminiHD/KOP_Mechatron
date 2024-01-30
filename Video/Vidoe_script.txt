@@ -1,5 +1,5 @@
-fmentioning locations, date: e.g. captain knorr studios headquarters 32/01/2024
-
+mentioning locations, date: e.g. captain knorr studios headquarters 32/01/2024
+[Video with subtitles]
 
 [INTRO]
     [Koks & Kögs KG presents (3D model of IC, on top of IC: brand name Koks & Kögs Kg; beneath IC fading in: presents)]
@@ -11,30 +11,43 @@ fmentioning locations, date: e.g. captain knorr studios headquarters 32/01/2024
     [people talking (normal / loud talking, but in background and quiet); mysterious music; dark screen, fading to workplace, showing discussion between team members]
     [someone saying clearly] "Pshht! Quiet!" [turns up TV Volume]
     [focus on the breaking news ("CAD-News"); everybody gets quiet, video zooms in on TV]
-    [news show; Theodore and Mr. Fich as Newscaster; ]
 
-[CAD NEWS]
+[CAD NEWS (Theodore and Mr. Fich as Newscaster)]
     [CAD-News Intro]
     [News reporter in Studio, with greenscreen, holding cards]
-    "Good morning humans, welcome to CAD-News!"
+        "Good day humans, welcome to CAD-News! Today, we have these topics for you:"
+        "Students invented a new way for moving firetrucks."
+        "Bugs in CAD Software are getting worse"
+        "and we have an exclusive interview with an upcoming DJ"
+
     [short pause, showing example picture of car in greenscreen]
-    "6 students of the HTL Steyr invented a revolutionary new way of moving firetrucks. Report by Oliver Lehner"
+        "6 students of the HTL Steyr invented a revolutionary new way of moving firetrucks. Report by Oliver Lehner"
 
-[CAD NEWS REPORT]
-    [Only B-Roll, Reporter talking, but not visible on screen]
-    ""
-    [Interview with team leader]
-    Q: "Why did you come up with this?"
-    A: "We noticed that often times firetrucks have a hard time to get to their destination, because the roads are narrow and there are many obsticales in the way.
-        So we thought that those trucks would need higher flexibility in how they move. Thats how we came up with the Idea for omnidirectional wheels."
-    Q: "That makes sense. So tell me, what were the challenges you faced, on a project level scale?"
+    [CAD NEWS REPORT]
+        [Only B-Roll, Reporter talking, but not visible on screen]
+            "Altough they are not even 20 years old, 6 students of the HTL Steyr may have revolutionised the firefighting industry. With their new design, firetrucks can get to places they were previously unable to reach. We have the team leader here to tell us more"
 
-    [Interview with construction team]
-    [Interview with programming man]
-    [Interview with electronics team]
+        [Interview with team leader (in front of a real firetruck?)]
+            Q: "How did you come up with this?"
+            A: "We noticed that often times firetrucks have a hard time to get to their destination, because the roads are narrow and there are many obsticales in the way. So we thought that those trucks would need higher flexibility in how they move. Thats how we came up with the Idea for omnidirectional wheels."
+            Q: "That makes sense. So tell me, what were the challenges you faced, on a project level scale?"
+            A: "The biggest challenge was certainly the cooperation between all of the team members. At first we didn't have a plan of who has to do what, and coordination was very difficult. But after a few meetings everyone mostly understood what they had to do."
+            Q: "Where there any other problems?"
+            A: "Well, you know, we had a few problems with the software we used to design our truck, but I think that there weren't any more major problems."
+            Q: "Thank you for telling us about your project"
+            A: "Thanks for having me!"
 
-[OTHER NEWS REPORT]
-    [Something about Chris Rabit...]
+        [Interview with construction team]
+        [Interview with electronics team]
+        [Interview with programming man]
+            Q: "So, I understand you were the only one responsible for programming in your team. Isn't that a bit too much for a single person to do?"
+            A: "Well, the core parts of the program where finished quite early, like the movement for example. But when getting into the details things became quiet a bit more complicated. But in the end, I managed to finish the program on time"
+            Q: "What were the major problems you encountered?"
+            A: "The biggest problem was definitly with the microcontroller we used. Some things didn't work as expected, and I had to do a lot of troubleshooting."
+            Q: ""
+
+    [OTHER NEWS REPORT]
+        [Something about Chris Rabit...]
 
 [ADS]
     [montage: gigachad theme; shots on turning platform; lights on; ]

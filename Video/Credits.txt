@@ -1,5 +1,5 @@
 Engineers: -
-Designers: Buchberger Lukas, Pilz Arian, Eglseer Christina, Templ Kilian, Köglberger Paul, Patzelt Raphael
+Designers: Buchberger Lukas, Pilz Arian, Eglseer Christina, Lehner Oliver, Templ Kilian, Köglberger Paul, Patzelt Raphael
 Electronics Technicians: Templ Kilian, Köglberger Paul
 Programmer: Patzelt Raphael
 
