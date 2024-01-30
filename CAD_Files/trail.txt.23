@@ -1,0 +1,64 @@
+﻿!trail file version No. 1990
+!Creo  TM  8.0  (c) 2024 by PTC Inc.  All Rights Reserved.
+!Exit Logger data:
+!	Process ID: 20372
+!	Application: Creo_Parametric
+!	Start date&time: 2024/01/30  09:03:24
+!	language: german
+!	machine type: x86e_win64
+!	datecode: 8.0.0.0
+!	Server: NONE
+!	Workspace: NONE
+!	traceback file: C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\traceback.log
+!end Exit Logger data.
+< 0 1.620148 2550 0 0 1367 2560 0 0 1440 13
+!mem_use INCREASE Blocks 931891, AppSize 15643394, SysSize 36629736
+< 0 1.110000 1110 0 0 1000 2560 0 0 1440 13
+< 0 1.114000 1114 0 0 1000 2560 0 0 1440 13
+< 0 1.114000 1114 0 0 1004 2560 0 0 1440 13
+< 0 1.114000 1114 0 0 1008 2560 0 0 1440 13
+< 0 1.058000 1058 0 0 1008 2560 0 0 1440 13
+< 0 1.249185 2280 0 0 1054 2560 0 0 1440 13
+< 0 1.249185 2219 0 0 1054 2560 0 0 1440 13
+!%CIWillkommen bei Creo Parametric Educational Edition 8.0.0.0.
+!AFX datecode: 8.0.0.0-rc.1 2020.11.23
+!AFX exec path: C:\Program Files\PTC\Creo 8.0.0.0\Common Files\afx\x86e_win64\afx80.dll
+!AFX text path: C:\Program Files\PTC\Creo 8.0.0.0\Common Files\afx\
+< 0 1.242074 2219 0 0 1048 2560 0 0 1440 13
+!mem_use INCREASE Blocks 1009545, AppSize 47148946, SysSize 70045704
+#PART
+#RETRIEVE
+!%CPObjektname eingeben: 
+!%TR
+C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\motorhvorne2.prt.1
+< 2 0.118519 178 0 0 100 2560 0 0 1440 13
+~ Trail `UI Desktop` `UI Desktop` `DLG_PREVIEW_POST` \
+ `file_open`
+!Command ProCmdModelOpenExe was pushed from the software.
+!30-Jan-24 09:03:30  Start C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\motorhvorne2.prt.1
+!LIGHT_FIX_MODEL_RMODE is 51
+!30-Jan-24 09:03:30  End   C:\Users\chris\OneDrive\Dokumente\GitHub\KOP_Mechatron\CAD_Files\motorhvorne2.prt.1
+!%CWMit dieser Trainingsversion von Creo Parametric erzeugte Objekte sind nicht
+!%C_kompatibel mit kommerziell lizenzierter Creo Parametric Software.
+@ oa_sel_filter_set _30_
+@ stack attr 2
+!MT_CUST - Applied settings for mode # 1 : MT Part Solid
+< 0 1.242074 2206 0 0 1048 2560 0 0 1440 13
+< 0 1.242074 2183 0 0 1048 2560 0 0 1440 13
+< 0 1.242074 2135 0 0 1048 2560 0 0 1440 13
+< 0 1.242074 2140 0 0 1048 2560 0 0 1440 13
+!MT_CUST - Applied settings for mode # 1 : MT Part Solid
+~ Wheel `main_dlg_cur` `proe_win` 9 1191 395 393216 0 2140 1048 2560 1440 8556
+~ Wheel `main_dlg_cur` `proe_win` 9 938 439 393216 0 2140 1048 2560 1440 10139
+~ Wheel `main_dlg_cur` `proe_win` 9 938 439 393216 0 2140 1048 2560 1440 10204
+~ Close `main_dlg_cur` `main_dlg_cur`
+!Command ProCmdOSExit was pushed from the software.
+! Message Dialog: Warning
+!               : Creo Parametric Educational Edition wird beendet und nicht gespeicherte Arbeit geht verloren.
+!               : Möchten Sie das Programm wirklich beenden?
+~ Activate `UI Message Dialog` `yes`
+!%CPTeil >> MOTORHVORNE2 speichern ? [Ja]
+!%TR
+
+<ESC>  
+!End of Trail File
