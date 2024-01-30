@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 //@brief Firmware Version
-const char constants::version[] = "v1.2.0";
+const char constants::version[] = "v1.3.0";
 
 //@brief The path of the config file
 const char constants::sdcardIO::ConfigFilePath[] = "/config.txt";
@@ -30,23 +30,23 @@ uint8_t constants::pins::led::Led1 = 15;
 uint8_t constants::pins::led::Led2 = 2;
 
 //@brief ledc Channel for the big Top LED
-uint8_t constants::pins::led::Top_Channel = 4;
+uint8_t constants::pins::led::Top_Channel = 7;
 
 //@brief ledc Channel for one half of the body LEDs
-uint8_t constants::pins::led::Led1_Channel = 5;
+uint8_t constants::pins::led::Led1_Channel = 8;
 
 //@brief ledc Channel for the other half of the body LEDs
-uint8_t constants::pins::led::Led2_Channel = 6;
+uint8_t constants::pins::led::Led2_Channel = 9;
 
 
 uint8_t constants::pins::motor::FrontLeft_Dir = 4;
 uint8_t constants::pins::motor::FrontLeft_Speed = 16;
 uint8_t constants::pins::motor::FrontRight_Dir = 17;
-uint8_t constants::pins::motor::FrontRight_Speed = 5;
+uint8_t constants::pins::motor::FrontRight_Speed = 12;
 uint8_t constants::pins::motor::BackLeft_Dir = 21;
 uint8_t constants::pins::motor::BackLeft_Speed = 3;
 uint8_t constants::pins::motor::BackRight_Dir = 32;
-uint8_t constants::pins::motor::BackRight_Speed = 22;
+uint8_t constants::pins::motor::BackRight_Speed = 14;
 
 //@brief The Buzzer Pin
 uint8_t constants::pins::buzzer::buzzer_pin = 5;

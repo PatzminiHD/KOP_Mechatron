@@ -18,9 +18,17 @@ class Motor
     }
 
     public:
-    uint8_t DIR_PIN, CHANNEL;
+    uint8_t DIR_PIN, SPEED_PIN, CHANNEL;
     uint16_t SPEED;
     bool DIRECTION, FORWARD_DIRECTION;
+
+    void init()
+    {
+        pinMode(DIR_PIN, OUTPUT);
+        pinMode(SPEED_PIN, OUTPUT);
+        ledcSetup(CHANNEL, 20000, 10);
+        ledcAttachPin(SPEED_PIN, CHANNEL);
+    }
 
     void SetSpeed(uint16_t speed)
     {

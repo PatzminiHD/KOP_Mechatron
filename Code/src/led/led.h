@@ -100,7 +100,7 @@ class Led
             &blinkLEDsTask,
             0);
 
-        isBlinking = false;
+        isBlinking = true;
     }
 
     void StopBlink()
@@ -112,5 +112,13 @@ class Led
         led_1_off();
         led_2_off();
         isBlinking = false;
+    }
+
+    void Toggle()
+    {
+        if(isBlinking)
+            StopBlink();
+        else
+            StartBlink();
     }
 };

@@ -13,8 +13,6 @@
 class Movement
 {
     private:
-    Buzzer buzzer;
-
     Motor Motor_FL;
     Motor Motor_FR;
     Motor Motor_BL;
@@ -33,44 +31,35 @@ class Movement
     Sensors sensors = Sensors();
     uint16_t DIRECTION, SPEED;
     uint8_t MovementMode;
-    bool controllerButtonSelectPrev = false;
+    bool controllerButtonSelectPrev = false, controllerButtonCirclePrev = false;
 
     void init()
     {
         Motor_FL.CHANNEL = 0;
         Motor_FL.DIR_PIN = constants::pins::motor::FrontLeft_Dir;
+        Motor_FL.SPEED_PIN = constants::pins::motor::FrontLeft_Speed;
         Motor_FL.FORWARD_DIRECTION = false;
-        pinMode(constants::pins::motor::FrontLeft_Dir, OUTPUT);
-        pinMode(constants::pins::motor::FrontLeft_Speed, OUTPUT);
-        ledcSetup(0, 20000, 10);
-        ledcAttachPin(constants::pins::motor::FrontLeft_Speed, 0);
+        Motor_FL.init();
 
         Motor_FR.CHANNEL = 1;
         Motor_FR.DIR_PIN = constants::pins::motor::FrontRight_Dir;
+        Motor_FR.SPEED_PIN = constants::pins::motor::FrontRight_Speed;
         Motor_FR.FORWARD_DIRECTION = true;
-        pinMode(constants::pins::motor::FrontRight_Dir, OUTPUT);
-        pinMode(constants::pins::motor::FrontRight_Speed, OUTPUT);
-        ledcSetup(1, 20000, 10);
-        ledcAttachPin(constants::pins::motor::FrontRight_Speed, 1);
+        Motor_FR.init();
 
         Motor_BL.CHANNEL = 2;
         Motor_BL.DIR_PIN = constants::pins::motor::BackLeft_Dir;
+        Motor_BL.SPEED_PIN = constants::pins::motor::BackLeft_Speed;
         Motor_BL.FORWARD_DIRECTION = false;
-        pinMode(constants::pins::motor::BackLeft_Dir, OUTPUT);
-        pinMode(constants::pins::motor::BackLeft_Speed, OUTPUT);
-        ledcSetup(2, 20000, 10);
-        ledcAttachPin(constants::pins::motor::BackLeft_Speed, 2);
+        Motor_BL.init();
 
         Motor_BR.CHANNEL = 3;
         Motor_BR.DIR_PIN = constants::pins::motor::BackRight_Dir;
+        Motor_BR.SPEED_PIN = constants::pins::motor::BackRight_Speed;
         Motor_BR.FORWARD_DIRECTION = true;
-        pinMode(constants::pins::motor::BackRight_Dir, OUTPUT);
-        pinMode(constants::pins::motor::BackRight_Speed, OUTPUT);
-        ledcSetup(3, 20000, 10);
-        ledcAttachPin(constants::pins::motor::BackRight_Speed, 3);
+        Motor_BR.init();
 
         controller.init();
-        buzzer.init();
 
         MovementMode = MovementMode_GasBreak;
     }
@@ -230,15 +219,13 @@ class Movement
         controllerButtonSelectPrev = controller.buttonSelect == 1;
         if(controller.buttonSquare == 1)
         {
-            Serial.println(sensors.CanGoFront());
+            //Serial.println(sensors.CanGoFront());
         }
-        if(controller.buttonCircle == 1)
+        if(controller.buttonCircle == 1 && controllerButtonCirclePrev == 0)
         {
-            if(led.isBlinking)
-                led.StopBlink();
-            else
-                led.StartBlink();
+            led.Toggle();
         }
+        controllerButtonCirclePrev = controller.buttonCircle == 1;
         switch(MovementMode)
         {
             case MovementMode_JoyLeft:
