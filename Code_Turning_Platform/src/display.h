@@ -103,7 +103,7 @@ class Display
             menuEntries.clear();
         }
 
-        void UpdateInt(size_t * variable, uint8_t stepSize, String varName)
+        void UpdateInt(size_t * variablePtr, uint8_t stepSize, String varName)
         {
             Serial.println("Update Int");
             Clear();
@@ -114,11 +114,11 @@ class Display
             while(!rotaryEncoder.buttonPressed)
             {
                 Serial.println("Update Loop");
-                lines[3] = varName + " = " + (String)*variable;
+                lines[3] = varName + " = " + (String)*variablePtr;
                 UpdateLines();
                 while(rotaryEncoder.movesToMake == 0 && !rotaryEncoder.buttonPressed) { ; }
                 Serial.println("Changed");
-                variable += rotaryEncoder.movesToMake * stepSize;
+                *variablePtr += rotaryEncoder.movesToMake * stepSize;
                 rotaryEncoder.movesToMake = 0;
             }
             rotaryEncoder.buttonPressed = false;
