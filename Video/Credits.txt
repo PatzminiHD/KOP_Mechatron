@@ -1,9 +1,11 @@
+Team Leader: Köglberger Paul
 Engineers: -
 Designers: Buchberger Lukas, Pilz Arian, Eglseer Christina, Lehner Oliver, Templ Kilian, Köglberger Paul, Patzelt Raphael
+Re-Designers: Köglberger Paul, Templ Kilian, Patzelt Raphael
 Electronics Technicians: Templ Kilian, Köglberger Paul
 Programmer: Patzelt Raphael
-
-
+Marketing: Köglberger Paul, Templ Kilian, Patzelt Raphael, Pilz Arian, Buchberger Lukas
+Fish (Official): Templ Kilian
 
 Koks&Kögs KG Intro: Patzelt Raphael
 Captain Knorr Intro: Templ Kilian
@@ -14,6 +16,10 @@ News reporter: Theodore
 Foreign correspondent: Lehner Oliver
 Video Editing: Templ Kilian, Köglberger Paul, Patzelt Raphael
 Visual Effects: Templ Kilian, Köglberger Paul, Patzelt Raphael
+Video Script: Templ Kilian, Patzelt Raphael, Köglberger Paul
 Audio: ##########, Patzelt Raphael
+Asynchronous speaker: Patzelt Raphael 
 Camera: ##########
+Programs: DaVinci Resolve, Creo, KiCad, PaP Designer, OneNote, git, GitHub Desktop, Paint, GIMP, Prusa Slicer, Code-OSS, Discord, Fusion360, 
 Screenshots: Templ Kilian, Pilz Arian, Eglseer Christina, Patzelt Raphael
+Credits: Patzelt Raphael, Köglberger Paul, Templ Kilian
