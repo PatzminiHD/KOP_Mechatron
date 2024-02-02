@@ -106,7 +106,10 @@ class Stepper
 
         void SetSpeed(uint16_t degreesPerSecond)
         {
-            targetSpeed = (degreesPerSecond / 360) * STEPPER_FULL_STEPS_IN_FULL_ROTATION * _movementMode;
+            Serial.print("Set Speed: ");
+            Serial.println(degreesPerSecond);
+            targetSpeed = (degreesPerSecond / 360.0) * STEPPER_FULL_STEPS_IN_FULL_ROTATION * _movementMode;
+            Serial.println(targetSpeed);
         }
 
         void MakeStep()

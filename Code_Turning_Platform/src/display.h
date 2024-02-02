@@ -1,6 +1,7 @@
 #include "rotary_encoder/rotary_encoder.h"
 #include <LiquidCrystal_I2C.h>
 #include <ArduinoSTL.h>
+#include <Int64String.h>
 
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 RotaryEncoder rotaryEncoder;
@@ -103,9 +104,8 @@ class Display
             menuEntries.clear();
         }
 
-        void UpdateInt(size_t * variablePtr, uint8_t stepSize, String varName)
+        void UpdateInt(int64_t * variablePtr, uint8_t stepSize, String varName, int64_t lowerBound, int64_t upperBound)
         {
-            Serial.println("Update Int");
             Clear();
             cursorPos = 3;
             lines[0] = "  Update  Variable  ";
@@ -114,11 +114,17 @@ class Display
             while(!rotaryEncoder.buttonPressed)
             {
                 Serial.println("Update Loop");
-                lines[3] = varName + " = " + (String)*variablePtr;
+                lines[3] = varName + " = " + int64String(*variablePtr, 10, true);
                 UpdateLines();
                 while(rotaryEncoder.movesToMake == 0 && !rotaryEncoder.buttonPressed) { ; }
                 Serial.println("Changed");
                 *variablePtr += rotaryEncoder.movesToMake * stepSize;
+
+                if(*variablePtr < lowerBound)
+                    *variablePtr = lowerBound;
+                if(*variablePtr > upperBound)
+                    *variablePtr = upperBound;
+
                 rotaryEncoder.movesToMake = 0;
             }
             rotaryEncoder.buttonPressed = false;

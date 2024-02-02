@@ -4,54 +4,63 @@
 #include <LiquidCrystal_I2C.h>
 
 const uint8_t stepperPins[5] = {
-  7, 6, 10, 9, 8
+  12, 13, 9, 10, 11
 };
 
 
 Stepper stepper(stepperPins[0], stepperPins[1], stepperPins[2], stepperPins[3], stepperPins[4], Stepper::MOVEMENT_MODE_SIXTEENTH);
 Display display;
+int64_t speed = 0;
 
+int64_t numOfPersons = 0;
 
-size_t numOfPersons = 0;
-void MainMenu();
+void MainMenu(uint8_t _cursorPos = 0);
 void DoNothing() { ; }
-void UpdateNumOfPersons()
+
+void Stop()
 {
-  display.UpdateInt(&numOfPersons, 1, "Num. of Pers.");
-  Serial.print("Updated NumOfPersons: ");
-  Serial.println(numOfPersons);
+  stepper.SetSpeed(0);
+  display.Clear();
+  display.menuEntries.push_back({"Stopping...", DoNothing});
+  display.Update();
+  stepper.ReachSpeedTarget();
+  rotaryEncoder.buttonPressed = false;
+  rotaryEncoder.movesToMake = 0;
   MainMenu();
 }
-void SubMenu1()
+void ReachSetSpeed()
 {
-  display.cursorPos = 0;
+  stepper.SetSpeed(speed);
   display.Clear();
-  display.menuEntries.push_back({"Go back", MainMenu});
-  display.menuEntries.push_back({"DoNothingLine", DoNothing});
+  display.menuEntries.push_back({"Accelerating...", DoNothing});
   display.Update();
+  stepper.ReachSpeedTarget();
+  rotaryEncoder.buttonPressed = false;
+  rotaryEncoder.movesToMake = 0;
+  MainMenu();
 }
-void SubMenu2()
+void UpdateSpeed()
 {
-  display.cursorPos = 0;
-  display.Clear();
-  display.menuEntries.push_back({"Go back", MainMenu});
-  display.menuEntries.push_back({"Number of Persons", UpdateNumOfPersons});
-  display.menuEntries.push_back({"DoNothingLine0", DoNothing});
-  display.menuEntries.push_back({"DoNothingLine1", DoNothing});
-  display.menuEntries.push_back({"DoNothingLine2", DoNothing});
-  display.menuEntries.push_back({"DoNothingLine3", DoNothing});
-  display.menuEntries.push_back({"DoNothingLine4", DoNothing});
-  display.Update();
+  display.UpdateInt(&speed, 1, "Speed", -360, 360);
+  MainMenu();
 }
-void MainMenu()
+void SetSpeedZero()
 {
-  display.cursorPos = 0;
+  speed = 0;
+}
+void UpdateNumOfPersons()
+{
+  display.UpdateInt(&numOfPersons, 1, "Num. of Pers.", 0, 12);
+  MainMenu(2);
+}
+void MainMenu(uint8_t _cursorPos = 0)
+{
+  display.cursorPos = _cursorPos;
   display.Clear();
-  display.menuEntries.push_back({"TurnTable", DoNothing});
-  display.menuEntries.push_back({"Number of Persons", UpdateNumOfPersons});
-  display.menuEntries.push_back({"EmptyLine", DoNothing});
-  display.menuEntries.push_back({"SubMenu1", SubMenu1});
-  display.menuEntries.push_back({"SubMenu2", SubMenu2});
+  display.menuEntries.push_back({"Stop", Stop});
+  display.menuEntries.push_back({"Reach Set Speed", ReachSetSpeed});
+  display.menuEntries.push_back({"Set Speed", UpdateSpeed});
+  display.menuEntries.push_back({"Set Speed to Zero", SetSpeedZero});
   display.Update();
 }
 

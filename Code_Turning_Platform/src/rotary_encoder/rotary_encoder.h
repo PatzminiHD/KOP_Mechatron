@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#define MOVES_PER_MOVE_TO_MAKE 1
+#define MOVES_PER_MOVE_TO_MAKE 3
 
 class RotaryEncoder
 {
@@ -51,12 +51,12 @@ class RotaryEncoder
         buttonPin = _buttonPin;
         moves = 0;
 
-        pinMode(clockPin, INPUT);
-        pinMode(dtPin, INPUT);
-        pinMode(buttonPin, INPUT);
+        pinMode(clockPin, INPUT_PULLUP);
+        pinMode(dtPin, INPUT_PULLUP);
+        pinMode(buttonPin, INPUT_PULLUP);
         
         attachInterrupt(digitalPinToInterrupt(clockPin), InterruptMethodClock, CHANGE);
-        attachInterrupt(digitalPinToInterrupt(buttonPin), InterruptMethodButton, FALLING);
+        attachInterrupt(digitalPinToInterrupt(buttonPin), InterruptMethodButton, RISING);
     }
 
 
