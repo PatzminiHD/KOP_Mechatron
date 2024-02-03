@@ -1,10 +1,28 @@
+Credits
+    Führerhaus oben
 Team Leader: Köglberger Paul
-Engineers: -
-Designers: Buchberger Lukas, Pilz Arian, Eglseer Christina, Lehner Oliver, Templ Kilian, Köglberger Paul, Patzelt Raphael
-Re-Designers: Köglberger Paul, Templ Kilian, Patzelt Raphael
-Electronics Technicians: Templ Kilian, Köglberger Paul
+    Führerhaus Upper Front
+Construction: Buchberger Lukas, Pilz Arian, Eglseer Christina, Lehner Oliver, Templ Kilian, Köglberger Paul, Patzelt Raphael
+    Führerhaus Left Door
 Programmer: Patzelt Raphael
+    Mittelteil Drehleiter Holder Back
+Electronics Technicians: Templ Kilian, Köglberger Paul
+    Führerhaus Right Door
+Donators: Chris Rabit
+    Führerhaus Vorne unten
+Engineers: -
+    Hinterteil Links, Vordere Stiege
 Marketing: Köglberger Paul, Templ Kilian, Patzelt Raphael, Pilz Arian, Buchberger Lukas
+    Hinterteil Links Ultraschallsensor Verdeckung
+
+Re-Construction: Köglberger Paul, Templ Kilian, Patzelt Raphael
+
+
+
+Supporters: Schwarzlmüller Gottfried, Riedl Ludwig, Schedlberger Gerhard, Sandmaier Christian, Fuchs Hubert, Küllinger Christoph, Eglseer Günther, Uhl Wolfgang, ##########, Wagner Gregor, Hinterreiter Franz
+    Mittelteil Back
+
+
 Fish (Official): Templ Kilian
 
 Koks&Kögs KG Intro: Patzelt Raphael
@@ -20,6 +38,6 @@ Video Script: Templ Kilian, Patzelt Raphael, Köglberger Paul
 Audio: ##########, Patzelt Raphael
 Asynchronous speaker: Patzelt Raphael 
 Camera: ##########
-Programs: DaVinci Resolve, Creo, KiCad, PaP Designer, OneNote, git, GitHub Desktop, Paint, GIMP, Prusa Slicer, Code-OSS, Discord, Fusion360, 
+Programs: DaVinci Resolve, Creo, KiCad, PaP Designer, OneNote, git, GitHub Desktop, Paint, GIMP, Prusa Slicer, Code-OSS, Discord, Fusion360, Kate
 Screenshots: Templ Kilian, Pilz Arian, Eglseer Christina, Patzelt Raphael
 Credits: Patzelt Raphael, Köglberger Paul, Templ Kilian
