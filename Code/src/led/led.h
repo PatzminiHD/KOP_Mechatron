@@ -10,27 +10,27 @@ class Led
 
     static void led_top_on()
     {
-        ledcWrite(constants::pins::led::Top_Channel, 255);
+        digitalWrite(constants::pins::led::Top, HIGH);
     }
     static void led_1_on()
     {
-        ledcWrite(constants::pins::led::Led1_Channel, 255);
+        digitalWrite(constants::pins::led::Led1, HIGH);
     }
     static void led_2_on()
     {
-        ledcWrite(constants::pins::led::Led2_Channel, 255);
+        digitalWrite(constants::pins::led::Led2, HIGH);
     }
     static void led_top_off()
     {
-        ledcWrite(constants::pins::led::Top_Channel, 0);
+        digitalWrite(constants::pins::led::Top, LOW);
     }
     static void led_1_off()
     {
-        ledcWrite(constants::pins::led::Led1_Channel, 0);
+        digitalWrite(constants::pins::led::Led1, LOW);
     }
     static void led_2_off()
     {
-        ledcWrite(constants::pins::led::Led2_Channel, 0);
+        digitalWrite(constants::pins::led::Led2, LOW);
     }
 
     static void BlinkLEDsTask(void * parameter)
@@ -75,12 +75,9 @@ class Led
     
     Led()
     {
-        ledcSetup(constants::pins::led::Top_Channel, 500, 8);
-        ledcSetup(constants::pins::led::Led1_Channel, 500, 8);
-        ledcSetup(constants::pins::led::Led2_Channel, 500, 8);
-        ledcAttachPin(constants::pins::led::Top, constants::pins::led::Top_Channel);
-        ledcAttachPin(constants::pins::led::Led1, constants::pins::led::Led1_Channel);
-        ledcAttachPin(constants::pins::led::Led2, constants::pins::led::Led2_Channel);
+        pinMode(constants::pins::led::Top, OUTPUT);
+        pinMode(constants::pins::led::Led1, OUTPUT);
+        pinMode(constants::pins::led::Led2, OUTPUT);
         led_top_off();
         led_1_off();
         led_2_off();
