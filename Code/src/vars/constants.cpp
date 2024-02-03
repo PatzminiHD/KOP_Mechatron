@@ -29,24 +29,22 @@ uint8_t constants::pins::led::Led1 = 15;
 //@brief Pin of the other half of the body LEDs, has to be a PWM Pin
 uint8_t constants::pins::led::Led2 = 2;
 
-//@brief ledc Channel for the big Top LED
-uint8_t constants::pins::led::Top_Channel = 7;
-
-//@brief ledc Channel for one half of the body LEDs
-uint8_t constants::pins::led::Led1_Channel = 8;
-
-//@brief ledc Channel for the other half of the body LEDs
-uint8_t constants::pins::led::Led2_Channel = 9;
-
 
 uint8_t constants::pins::motor::FrontLeft_Dir = 4;
 uint8_t constants::pins::motor::FrontLeft_Speed = 16;
 uint8_t constants::pins::motor::FrontRight_Dir = 17;
-uint8_t constants::pins::motor::FrontRight_Speed = 12;
+uint8_t constants::pins::motor::FrontRight_Speed = 5;
 uint8_t constants::pins::motor::BackLeft_Dir = 21;
 uint8_t constants::pins::motor::BackLeft_Speed = 3;
-uint8_t constants::pins::motor::BackRight_Dir = 32;
-uint8_t constants::pins::motor::BackRight_Speed = 14;
+uint8_t constants::pins::motor::BackRight_Dir = 33;
+uint8_t constants::pins::motor::BackRight_Speed = 22;
+
+uint8_t constants::pins::motor::ServoLowerPin = 12;
+uint8_t constants::pins::motor::ServoUpperPin = 14;
+uint8_t constants::pins::motor::ServoExtenderPin = 27;
+
+uint8_t constants::pins::motor::ServoExtenderLimitSwitchLower_Pin = 39;
+uint8_t constants::pins::motor::ServoExtenderLimitSwitchUpper_Pin = 36;
 
 //@brief The Buzzer Pin
 uint8_t constants::pins::buzzer::buzzer_pin = 5;
@@ -91,9 +89,6 @@ bool constants::setValue(std::string key, String value)
     else if(key == "pins::led::Top")                        { constants::pins::led::Top = uint8_t_value; }
     else if(key == "pins::led::Led1")                       { constants::pins::led::Led1 = uint8_t_value; }
     else if(key == "pins::led::Led2")                       { constants::pins::led::Led2 = uint8_t_value; }
-    else if(key == "pins::led::Top_Channel")                { constants::pins::led::Top_Channel = uint8_t_value; }
-    else if(key == "pins::led::Led1_Channel")               { constants::pins::led::Led1_Channel = uint8_t_value; }
-    else if(key == "pins::led::Led2_Channel")               { constants::pins::led::Led2_Channel = uint8_t_value; }
     else if(key == "pins::motor::FrontLeft_Dir")            { constants::pins::motor::FrontLeft_Dir = uint8_t_value; }
     else if(key == "pins::motor::FrontLeft_Speed")          { constants::pins::motor::FrontLeft_Speed = uint8_t_value; }
     else if(key == "pins::motor::FrontRight_Dir")           { constants::pins::motor::FrontRight_Dir = uint8_t_value; }

@@ -26,9 +26,6 @@ class constants
             static uint8_t Top;
             static uint8_t Led1;
             static uint8_t Led2;
-            static uint8_t Top_Channel;
-            static uint8_t Led1_Channel;
-            static uint8_t Led2_Channel;
         };
 
         class motor

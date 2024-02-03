@@ -4,6 +4,7 @@
 #include "../music/buzzer.h"
 #include "../led/led.h"
 #include "../ultrasonic-sensors/sensors.h"
+#include "servoController.h"
 
 #define DIRECTION_FORWARDS  0
 #define DIRECTION_RIGHT     90
@@ -18,6 +19,12 @@ class Movement
     Motor Motor_BL;
     Motor Motor_BR;
 
+    Controller controller;
+    Led led = Led();
+    Sensors sensors = Sensors();
+
+    ServoController servoController;
+
     enum MovementModeEnum
     {
         MovementMode_JoyLeft,
@@ -26,15 +33,14 @@ class Movement
     };
 
     public:
-    Controller controller;
-    Led led = Led();
-    Sensors sensors = Sensors();
     uint16_t DIRECTION, SPEED;
     uint8_t MovementMode;
     bool controllerButtonSelectPrev = false, controllerButtonCirclePrev = false;
 
     void init()
     {
+        servoController.init();
+
         Motor_FL.CHANNEL = 0;
         Motor_FL.DIR_PIN = constants::pins::motor::FrontLeft_Dir;
         Motor_FL.SPEED_PIN = constants::pins::motor::FrontLeft_Speed;
@@ -62,6 +68,10 @@ class Movement
         controller.init();
 
         MovementMode = MovementMode_GasBreak;
+
+        DIRECTION = 0;
+        SPEED = 0;
+        Apply();
     }
 
     void FullSpeed()

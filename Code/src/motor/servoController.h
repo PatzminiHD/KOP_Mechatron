@@ -5,6 +5,7 @@
 #define SERVO_UPPER_HOME_POSITION 0
 #define SERVO_LOWER_HOME_POSITION 90
 #define SERVO_HOMING_SPEED 11           //Lower Value -> higher Speed
+#define SERVO_DEGREES_PER_FUNCTION_CALL 1
 
 //@brief Object of servo
 class ServoController
@@ -34,40 +35,46 @@ class ServoController
 
     void applyPosition()
     {
-        servoLower.write(servoLowerPosition);
         servoUpper.write(servoUpperPosition);
+        servoLower.write(servoLowerPosition);
     }
 
-    void moveServoUpper(int8_t dirAndSpeed)
+    void turnServoUpperCW()
     {
-        int16_t mapped = dirAndSpeed / 25;
-        if(servoUpperPosition + mapped > 180)
+        if(servoUpperPosition > 179)
         {
             servoUpperPosition = 180;
             return;
         }
-        if(servoUpperPosition + mapped < 0)
+        servoUpperPosition = servoUpperPosition + 1;
+    }
+    void turnServoUpperCCW()
+    {
+        if(servoUpperPosition < 1)
         {
             servoUpperPosition = 0;
             return;
         }
-        servoUpperPosition = servoUpperPosition + mapped;
+        servoUpperPosition = servoUpperPosition - 1;
     }
 
-    void moveServoLower(int8_t dirAndSpeed)
+    void turnServoLowerCW()
     {
-        int16_t mapped = dirAndSpeed / 25;
-        if(servoLowerPosition + mapped > 180)
+        if(servoLowerPosition > 179)
         {
             servoLowerPosition = 180;
             return;
         }
-        if(servoLowerPosition + mapped < 0)
+        servoLowerPosition = servoLowerPosition + 1;
+    }
+    void turnServoLowerCCW()
+    {
+        if(servoLowerPosition < 1)
         {
             servoLowerPosition = 0;
             return;
         }
-        servoLowerPosition = servoLowerPosition + mapped;
+        servoLowerPosition = servoLowerPosition - 1;
     }
 
     void resetPosition()
@@ -142,7 +149,7 @@ class ServoController
             {
                 ;
             }
-            delay(1);
+            delay(3);
             servoExtender.write(90);
             return false;
         }
@@ -171,7 +178,7 @@ class ServoController
             {
                 ;
             }
-            delay(1);
+            delay(3);
             servoExtender.write(90);
             return false;
         }
