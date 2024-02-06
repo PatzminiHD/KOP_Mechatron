@@ -226,6 +226,23 @@ class Movement
                 MovementMode = 0;
             }
         }
+
+        if(controller.dPadLeft)
+            servoController.turnServoLowerCW();
+        else if(controller.dPadRight)
+            servoController.turnServoLowerCCW();
+
+        if(controller.dPadUp)
+            servoController.turnServoUpperCCW();
+        else if(controller.dPadDown)
+            servoController.turnServoUpperCW();
+
+        if(controller.shoulderButtonL)
+            servoController.retractExtender();
+        else if(controller.shoulderButtonR)
+            servoController.extendExtender();
+
+
         controllerButtonSelectPrev = controller.buttonSelect == 1;
         if(controller.buttonSquare == 1)
         {
