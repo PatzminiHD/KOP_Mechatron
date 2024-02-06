@@ -59,11 +59,9 @@ class constants
             public:
             static uint8_t Trigger;
             static uint8_t Front_Sens;
-            static uint8_t FrontLeft_Sens;
-            static uint8_t BackLeft_Sens;
             static uint8_t Back_Sens;
-            static uint8_t BackRight_Sens;
-            static uint8_t FrontRight_Sens;
+            static uint8_t Left_Sens;
+            static uint8_t Right_Sens;
         };
     };
 

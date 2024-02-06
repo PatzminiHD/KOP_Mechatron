@@ -52,11 +52,9 @@ uint8_t constants::pins::buzzer::pwm_channel = 7;
 
 uint8_t constants::pins::uss::Trigger = 25;
 uint8_t constants::pins::uss::Front_Sens = 36;
-uint8_t constants::pins::uss::FrontLeft_Sens = 39;
-uint8_t constants::pins::uss::BackLeft_Sens = 34;
-uint8_t constants::pins::uss::Back_Sens = 35;
-uint8_t constants::pins::uss::BackRight_Sens = 32;
-uint8_t constants::pins::uss::FrontRight_Sens = 33;
+uint8_t constants::pins::uss::Back_Sens = 39;
+uint8_t constants::pins::uss::Left_Sens = 34;
+uint8_t constants::pins::uss::Right_Sens = 35;
 
 uint8_t constants::uss::FrontBack_Min_Distance = 15;
 uint8_t constants::uss::Side_Min_Distance = 20;
