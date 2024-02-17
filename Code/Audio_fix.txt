@@ -1,0 +1,34 @@
+0  - 320kbps  48000Hz 32bit stereo - Too Slow, 0.5x
+1  - variable 48000Hz 32bit stereo - Too Slow, 0.5x
+2  - variable 48000Hz 32bit stereo - Too Slow, 0.5x
+3  - 32kbps   48000Hz 32bit stereo - Too Slow, 0.5x
+4  - 32kbps   48000Hz 32bit mono   - Too Slow, 0.5x
+5  - 24kbps   24000Hz 32bit stereo - Too Slow, 0.5x
+6  - 24kbps   24000Hz 32bit mono   - Too Slow, 0.5x
+7  - 16kbps   24000Hz 32bit stereo - Too Slow, 0.5x
+8  - 16kbps   24000Hz 32bit mono   - Too Slow, 0.5x
+9  - 8kbps    24000Hz 32bit stereo - Too Fast?, Speed can not be determined
+10 - 8kbps    24000Hz 32bit mono   - Too Slow, 0.5x
+11 - 16kbps   22050Hz 32bit stereo - Too Slow, 0.5x
+12 - 16kbps   16000Hz 32bit stereo - Too Fast, Speed can not be determined, slower than 9
+13 - 24kbps   22050Hz 32bit stereo - Too Slow, 0.5x
+14 - 32kbps   22050Hz 32bit stereo - Too Slow, 0.5x
+15 - 16kbps   24000Hz 32bit stereo - Too Slow, 0.5x
+16 - 16kbps   22050Hz 32bit stereo - ????????
+17 - 16kbps   16000Hz 32bit stereo - Too Fast, 1.003x
+long  - 24kbps   24000Hz 32bit mono   - 
+short - variable 48000Hz 32bit stereo - 
+small - variable 48000Hz 32bit stereo - 
+
+test (2x) - 320kbps 48000Hz 32bit mono - 
+
+Note: Mono has same filesize as stereo, but better quality
+
+Lower bitrate leads to much worse audio (duh) and clicking
+
+
+Solution:
+=========
+
+Audacity -> Effect -> Pitch and Tempo -> Change Speed and Pitch -> 2x
+Export Audio: Mono, 48000Hz, Constant Bitrate, 320kbps

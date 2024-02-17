@@ -12,9 +12,9 @@
 #define MP3_SPIFFS_FILE_NAME "/intern.mp3"
 #define MP3_MAX_INTERNAL_FILE_SIZE 2097152 // 2 * 1024 * 1024
 
-// Played Audio has to have a Constant Bitrate of 16kbps, Joint Stereo,
-// with a sample rate of 16000Hz, and is played with a speed multiplier of 2.770
-// (So to have it play, with the correct speed, you have to apply a speed multiplier of 0.361)
+// Played Audio has to have a Constant Bitrate of 320kbps, Mono,
+// with a sample rate of 48000Hz, and is played with a speed multiplier of 0.5
+// (So to have it play, with the correct speed, you have to apply a speed and pitch multiplier of 2.0)
 
 class MP3
 {
@@ -57,6 +57,7 @@ class MP3
 
     static void play_task(void *param)
     {
+        Serial.println("MP3 PLAY TASK");
         Output *output = new DACOutput();
         // setup for the mp3 decoded
         short *pcm = (short *)malloc(sizeof(short) * MINIMP3_MAX_SAMPLES_PER_FRAME);
@@ -74,6 +75,18 @@ class MP3
         {
             mp3File = MP3_SPIFFS_FILE_NAME;
         }*/
+        File root = SD.open("/");
+        File file = root.openNextFile();
+        
+        while(file){
+ 
+            Serial.print("FILE: ");
+            Serial.println(file.name());
+        
+            file = root.openNextFile();
+        }
+
+        Serial.println("MP3 STARTING");
 
         while (true)
         {
@@ -151,11 +164,13 @@ class MP3
                     // keep track of how many samples we've decoded
                     decoded += samples;
                 }
-            // ESP_LOGI("main", "decoded %d samples\n", decoded);
+             //ESP_LOGI("main", "decoded %d samples\n", decoded);
             }
             ESP_LOGI("mp3", "Finished\n");
             fclose(fp);
+            break;
         }
+        vTaskDelete(NULL);
     }
     static void Play()
     {

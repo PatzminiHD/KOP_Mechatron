@@ -4,12 +4,16 @@
 #include "../music/buzzer.h"
 #include "../led/led.h"
 #include "../ultrasonic-sensors/sensors.h"
+#include "../music/MP3.h"
 #include "servoController.h"
 
 #define DIRECTION_FORWARDS  0
 #define DIRECTION_RIGHT     90
 #define DIRECTION_BACKWARDS 180
 #define DIRECTION_LEFT      270
+
+std::string MP3::mp3File;
+int MP3::VOLUME;
 
 class Movement
 {
@@ -72,6 +76,10 @@ class Movement
         DIRECTION = 0;
         SPEED = 0;
         Apply();
+
+        MP3::mp3File = "/test.mp3";
+        //MAX VOLUME is 4096
+        MP3::VOLUME = 4096;
     }
 
     void FullSpeed()
@@ -221,6 +229,7 @@ class Movement
         if(controller.konamiCode)
         {
             Serial.println("KONAMI CODE ENTERED!");
+            MP3::Play();
         }
 
         if(controller.buttonSelect == 1 && controllerButtonSelectPrev == false)
