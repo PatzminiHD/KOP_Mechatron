@@ -23,6 +23,7 @@ class Controller
     uint8_t throttleGas, throttleBreake;
     unsigned long led_blink_millis;
     bool led_blink, konamiCode, konamiCodePrev;
+    ps3_status_battery batteryStatusPrev;
 
 
 
@@ -69,9 +70,12 @@ class Controller
         throttleBreake = Ps3.data.analog.button.r2;
 
         buttonSelect   = Ps3.data.button.select;
+        buttonStart    = Ps3.data.button.start;
+
         buttonSquare   = Ps3.data.button.square;
         buttonCircle   = Ps3.data.button.circle;
         buttonTriangle = Ps3.data.button.triangle;
+        buttonX        = Ps3.data.button.cross;
 
         shoulderButtonL = Ps3.data.button.l1;
         shoulderButtonR = Ps3.data.button.r1;
@@ -83,31 +87,41 @@ class Controller
             led_blink = !led_blink;
         }
 
-        switch(Ps3.data.status.battery)
+        if(batteryStatusPrev != Ps3.data.status.battery || Ps3.data.status.battery == ps3_status_battery_shutdown)
         {
-            case ps3_status_battery_full:
-                Ps3.setPlayer(10);
-                break;
-            case ps3_status_battery_high:
-                Ps3.setPlayer(9);
-                break;
-            case ps3_status_battery_low:
-                Ps3.setPlayer(7);
-                break;
-            case ps3_status_battery_dying:
-                Ps3.setPlayer(4);
-                break;
-            case ps3_status_battery_shutdown:
-                if(led_blink)
-                {
+            switch(Ps3.data.status.battery)
+            {
+                case ps3_status_battery_full:
+                    Serial.println("Controller Battery Full");
+                    Ps3.setPlayer(10);
+                    break;
+                case ps3_status_battery_high:
+                    Serial.println("Controller Battery High");
+                    Ps3.setPlayer(9);
+                    break;
+                case ps3_status_battery_low:
+                    Serial.println("Controller Battery Low");
+                    Ps3.setPlayer(7);
+                    break;
+                case ps3_status_battery_dying:
+                    Serial.println("Controller Battery Dying");
                     Ps3.setPlayer(4);
-                }
-                else
-                {
-                    Ps3.setPlayer(1);
-                }
-                break;
+                    break;
+                case ps3_status_battery_shutdown:
+                    if(led_blink)
+                    {
+                        Serial.println("Controller Battery Shutdown");
+                        Ps3.setPlayer(4);
+                    }
+                    else
+                    {
+                        Serial.println("Controller Battery Shutdown");
+                        Ps3.setPlayer(1);
+                    }
+                    break;
+            }
         }
+        batteryStatusPrev = Ps3.data.status.battery;
 
         CheckKonami();
     }
@@ -123,9 +137,24 @@ class Controller
 
     void CheckKonami()
     {
-        for(uint8_t i = 0; i < 10; i++)
+        if(konamiCode)
         {
-            konamiButtonList[i] = konamiButtonList[i+1];
+            konamiButtonList[9] = KONAMI_BUTTON_NONE;
+            konamiCode = false;
+        }
+
+        if(dPadUp && !dPadUpPrev ||
+           dPadDown && !dPadDownPrev ||
+           dPadLeft && !dPadLeftPrev ||
+           dPadRight && !dPadRightPrev ||
+           buttonCircle && !buttonCirclePrev ||
+           buttonX && !buttonXPrev ||
+           buttonStart && !buttonStartPrev)
+        {
+            for(uint8_t i = 0; i < 10; i++)
+            {
+                konamiButtonList[i] = konamiButtonList[i+1];
+            }
         }
 
         if(dPadUp && !dPadUpPrev)
@@ -140,7 +169,7 @@ class Controller
             konamiButtonList[10] = KONAMI_BUTTON_B;
         else if(buttonX && !buttonXPrev)
             konamiButtonList[10] = KONAMI_BUTTON_A;
-        else if(buttonStart && !buttonStart)
+        else if(buttonStart && !buttonStartPrev)
             konamiButtonList[10] = KONAMI_BUTTON_START;
 
         if(konamiButtonList[10] == KONAMI_BUTTON_START &&
@@ -155,6 +184,6 @@ class Controller
            konamiButtonList[1] == KONAMI_BUTTON_UP &&
            konamiButtonList[0] == KONAMI_BUTTON_UP &&
            konamiCodePrev == false)
-           konamiCode = true;
+            konamiCode = true;
     }
 };

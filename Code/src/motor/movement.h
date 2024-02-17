@@ -218,6 +218,11 @@ class Movement
 
         controller.loop();
 
+        if(controller.konamiCode)
+        {
+            Serial.println("KONAMI CODE ENTERED!");
+        }
+
         if(controller.buttonSelect == 1 && controllerButtonSelectPrev == false)
         {
             MovementMode++;
