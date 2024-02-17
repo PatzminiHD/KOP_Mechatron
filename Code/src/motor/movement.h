@@ -247,6 +247,8 @@ class Movement
         else if(controller.shoulderButtonR)
             servoController.extendExtender();
 
+        servoController.applyPosition();
+
 
         controllerButtonSelectPrev = controller.buttonSelect == 1;
         if(controller.buttonSquare == 1)

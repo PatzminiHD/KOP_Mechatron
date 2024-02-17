@@ -6,6 +6,7 @@
 #define SERVO_LOWER_HOME_POSITION 90
 #define SERVO_HOMING_SPEED 11           //Lower Value -> higher Speed
 #define SERVO_DEGREES_PER_FUNCTION_CALL 1
+#define SERVO_MANUAL_TURNING_SPEED 20
 
 //@brief Object of servo
 class ServoController
@@ -16,6 +17,7 @@ class ServoController
     Servo servoExtender;
     uint8_t servoLowerPosition = 90;
     uint8_t servoUpperPosition = 0;
+    long long lowerServoLastTurn, upperServoLastTurn;
 
     public:
     void init()
@@ -41,6 +43,10 @@ class ServoController
 
     void turnServoUpperCW()
     {
+        if(upperServoLastTurn > millis() - SERVO_MANUAL_TURNING_SPEED)
+            return;
+        upperServoLastTurn = millis();
+
         if(servoUpperPosition > 179)
         {
             servoUpperPosition = 180;
@@ -50,6 +56,10 @@ class ServoController
     }
     void turnServoUpperCCW()
     {
+        if(upperServoLastTurn > millis() - SERVO_MANUAL_TURNING_SPEED)
+            return;
+        upperServoLastTurn = millis();
+
         if(servoUpperPosition < 1)
         {
             servoUpperPosition = 0;
@@ -60,6 +70,10 @@ class ServoController
 
     void turnServoLowerCW()
     {
+        if(lowerServoLastTurn > millis() - SERVO_MANUAL_TURNING_SPEED)
+            return;
+        lowerServoLastTurn = millis();
+
         if(servoLowerPosition > 179)
         {
             servoLowerPosition = 180;
@@ -69,6 +83,10 @@ class ServoController
     }
     void turnServoLowerCCW()
     {
+        if(lowerServoLastTurn > millis() - SERVO_MANUAL_TURNING_SPEED)
+            return;
+        lowerServoLastTurn = millis();
+
         if(servoLowerPosition < 1)
         {
             servoLowerPosition = 0;
