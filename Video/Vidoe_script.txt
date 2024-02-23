@@ -15,7 +15,7 @@ mentioning locations, date: e.g. captain knorr studios headquarters 32/01/2024
 [CAD NEWS (Theodore and Mr. Fich as Newscaster)]
     [CAD-News Intro]
     [News reporter in Studio, with greenscreen, holding cards]
-        "Good day humans, welcome to CAD-News! Today, we have these topics for you:"
+        "Good morning humans, welcome to CAD-News! Today, we have these topics for you:"
         "Students invented a new way for moving firetrucks."
         "Bugs in CAD Software are getting worse"
         "and we have an exclusive interview with an upcoming DJ"
@@ -44,9 +44,22 @@ mentioning locations, date: e.g. captain knorr studios headquarters 32/01/2024
             A: "Well, the core parts of the program where finished quite early, like the movement for example. But when getting into the details things became quiet a bit more complicated. But in the end, I managed to finish the program on time"
             Q: "What were the major problems you encountered?"
             A: "The biggest problem was definitly with the microcontroller we used. Some things didn't work as expected, and I had to do a lot of troubleshooting."
-            Q: ""
+            Q: "Can you give us any examples?"
+            A: "Well, there is this pin that you should be able to use as Input and Output, but neither of those 2 things worked for us. The microcontroller even stopped executing completely when trying to assign the pin as an Output Pin. That was a hard bug to figure out."
+            Q: "That seems pretty strange. Anyway, thank you for giving us some insights into your work!"
 
-    [OTHER NEWS REPORT]
+    [OTHER NEWS REPORTS]
+        [Theodore swapping cards]
+            "Bugs in CAD Software are getting worse."
+            "A recent survey shows that more and more people complain about finding new bugs in the CAD Software they use."
+            "About 69 percent of people say they have encountered at least one bug,"
+            "With 31 percent saying they have encountered at least 4 errors in the last year"
+            "The application that is most impacted seems to be Creo by PTC"
+            "The company has not yet responded to these complaints"
+
+        [Theodore swapping cards]
+
+
         [Something about Chris Rabit...]
 
 [ADS]
