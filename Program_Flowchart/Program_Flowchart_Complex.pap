@@ -1,0 +1,1259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FRAME GUID="2FB25471-B62C-4EE6-BD43-F819C095ACF8" FORMAT="0000" APP_VERSION="2.2.0.8" CHECKSUM="920B70B020478A3B">
+  <PROJECT FORMAT="1.00" NAME="Program_Flowchart_Complex" AUTHOR="PatzminiHD" CREATED="2024.02.24 16:20:52" MODIFIED="2024.02.24 18:28:42">
+    <DIAGRAMS>
+      <DIAGRAM FORMAT="1.00" ID="0" NAME="Hauptprogramm 1" CREATED="2024.02.24 16:21:03" MODIFIED="2024.02.24 18:28:42">
+        <LAYOUT FORMAT="1.00" COLUMNS="6" ROWS="80">
+          <ENTRIES>
+            <ENTRY COLUMN="0" ROW="0" ANCHOR="True">
+              <FIGURE SUBTYPE="PapTitle" FORMAT="1.00" ID="0">
+                <TEXT><![CDATA[Hauptprogramm 1]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="1">
+              <FIGURE SUBTYPE="PapStart" FORMAT="1.00" ID="1">
+                <TEXT><![CDATA[Start]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="2">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="4">
+                <TEXT><![CDATA[Begin Serial Communication]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="3">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="6">
+                <TEXT><![CDATA[Delay 500ms]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="4">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="32">
+                <TEXT><![CDATA[Print Firmware Version]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="5">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="12">
+                <TEXT><![CDATA[SD Mount successful?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="6">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="16">
+                <TEXT><![CDATA[Is Card Attached?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="7">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="29">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="8">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="33">
+                <TEXT><![CDATA[Set Servo Pin Modes]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="9">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="35">
+                <TEXT><![CDATA[Attach Servos]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="10">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="37" ASSOCIATE="39">
+                <TEXT><![CDATA[While not Drehleiter Extender Lower Limit Switch Pressed]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="11">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="41">
+                <TEXT><![CDATA[Retract Drehleiter]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="12">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="39" ASSOCIATE="37">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="13">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="43">
+                <TEXT><![CDATA[Extend Drehleiter for 3ms]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="14">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="45">
+                <TEXT><![CDATA[Move Lower Servo to 90°]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="15">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="47">
+                <TEXT><![CDATA[Move Upper Servo to SERVO_UPPER_HOMING_POSITION]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="16">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="49">
+                <TEXT><![CDATA[Move Upper Servo to SERVO_UPPER_HOMING_POSITION]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="17">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="57">
+                <TEXT><![CDATA[Init FrontLeft Motor]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="18">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="58">
+                <TEXT><![CDATA[Init FrontRight Motor]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="19">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="59">
+                <TEXT><![CDATA[Init BackLeft Motor]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="20">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="60">
+                <TEXT><![CDATA[Init BackRight Motor]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="21">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="62">
+                <TEXT><![CDATA[Set Controller OnConnect Method]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="22">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="64">
+                <TEXT><![CDATA[Set Controller Bluetooth Address]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="23">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="66" ASSOCIATE="68">
+                <TEXT><![CDATA[Main Loop; never stops]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="24">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="70">
+                <TEXT><![CDATA[Is PS3 Controller Connected?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="25">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="78">
+                <TEXT><![CDATA[Read all needed Controller Inputs]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="26">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="80">
+                <TEXT><![CDATA[Has Controller Battery Status Changed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="27">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="97">
+                <TEXT><![CDATA[Set Controller Player LED to reflect Battery Status]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="28">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="99">
+                <TEXT><![CDATA[Are Last 11 Button Presses Konami Code?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="29">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="106">
+                <TEXT><![CDATA[Set KonamiCode Variable]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="30">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="114">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="31">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="117">
+                <TEXT><![CDATA[Has Konami Code been entered?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="32">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="121">
+                <TEXT><![CDATA[Print "KONAMI CODE ENTERED!"]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="33">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="123">
+                <TEXT><![CDATA[Open DanceRoutine File]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="34">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="125">
+                <TEXT><![CDATA[Did Dance Routine File open?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="35">
+              <FIGURE SUBTYPE="PapInput" FORMAT="1.00" ID="139">
+                <TEXT><![CDATA[Read Dance Routine File into array]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="36">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="131">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="37">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="176" ASSOCIATE="178">
+                <TEXT><![CDATA[MP3 loop. runs on second core]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="38">
+              <FIGURE SUBTYPE="PapInput" FORMAT="1.00" ID="146">
+                <TEXT><![CDATA[Open MP3 File]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="39">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="147">
+                <TEXT><![CDATA[Did MP3 File open?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="40">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="153" ASSOCIATE="155">
+                <TEXT><![CDATA[MP3 Play loop, runs on second core]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="41">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="167">
+                <TEXT><![CDATA[Set ADC Volume]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="42">
+              <FIGURE SUBTYPE="PapInput" FORMAT="1.00" ID="170">
+                <TEXT><![CDATA[Fill buffer from file]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="43">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="168">
+                <TEXT><![CDATA[Feed the watchdog]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="44">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="172">
+                <TEXT><![CDATA[Is buffer empty?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="45">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="186">
+                <TEXT><![CDATA[Decode MP3 Frame]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="46">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="188">
+                <TEXT><![CDATA[Do we have any samples to output?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="47">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="198">
+                <TEXT><![CDATA[Has the output started yet?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="48">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="202">
+                <TEXT><![CDATA[Start the output]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="49">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="206">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="50">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="209">
+                <TEXT><![CDATA[Was the decoded Frame Stereo?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="51">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="213">
+                <TEXT><![CDATA[Duplicate the sample to produce stereo output]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="52">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="217">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="53">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="220">
+                <TEXT><![CDATA[Write the output]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="54">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="192">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="55">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="155" ASSOCIATE="153">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="56">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="222">
+                <TEXT><![CDATA[Log Info "MP3: Finished"]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="57">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="160">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="58">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="224">
+                <TEXT><![CDATA[Close MP3 File]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="59">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="227">
+                <TEXT><![CDATA[Delete MP3 Task]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="60">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="178" ASSOCIATE="176">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="61">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="229">
+                <TEXT><![CDATA[Is MP3 Task Handle NULL?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="62">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="231">
+                <TEXT><![CDATA[Get MP3 Task State]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="63">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="237">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="64">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="247">
+                <TEXT><![CDATA[Print "Main Dance Loop"]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="65">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="249" ASSOCIATE="251">
+                <TEXT><![CDATA[While Controller Select button is not pressed and MP3 Task State is running]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="66">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="253">
+                <TEXT><![CDATA[Read all needed Controller Inputs]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="67">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="254">
+                <TEXT><![CDATA[Has Controller Battery Status Changed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="68">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="255">
+                <TEXT><![CDATA[Set Controller Player LED to reflect Battery Status]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="69">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="261">
+                <TEXT><![CDATA[Is MP3 Task Handle NULL?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="70">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="263">
+                <TEXT><![CDATA[Get MP3 Task State]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="71">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="271">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="72">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="274">
+                <TEXT><![CDATA[Is it time for next Dance Move?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="73">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="276">
+                <TEXT><![CDATA[Apply Dance Position]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="74">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="287">
+                <TEXT><![CDATA[Is the read line the last one?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="75">
+              <FIGURE SUBTYPE="PapInput" FORMAT="1.00" ID="278">
+                <TEXT><![CDATA[Read Next Dance Position]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="76">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="284">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="77">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="251" ASSOCIATE="249">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="78">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="68" ASSOCIATE="66">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="79">
+              <FIGURE SUBTYPE="PapEnd" FORMAT="1.00" ID="2">
+                <TEXT><![CDATA[Ende]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="47">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="200">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="49">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="204">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="50">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="211">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="52">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="215">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="63">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="235">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="2" ROW="46">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="190">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="2" ROW="54">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="195">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="34">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="127">
+                <TEXT><![CDATA[Log Error: "Movement: Dance, failed to open file"]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="35">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="128">
+                <TEXT><![CDATA[close file]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="36">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="136">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="39">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="149">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="44">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="183">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="57">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="162">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="61">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="240">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="62">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="242">
+                <TEXT><![CDATA[Set MP3 Task State to invalid]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="63">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="244">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="69">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="266">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="70">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="265">
+                <TEXT><![CDATA[Set MP3 Task State to invalid]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="71">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="269">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="74">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="294">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="76">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="281">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="5">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="14">
+                <TEXT><![CDATA[return 1]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="6">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="18">
+                <TEXT><![CDATA[return 2]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="26">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="95">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="28">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="104">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="30">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="111">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="31">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="119">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="36">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="129">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="72">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="290">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="76">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="289">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="5" ROW="5">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="298">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="5" ROW="6">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="301">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="5" ROW="7">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="303">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="5" ROW="24">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="77">
+                <TEXT><![CDATA[Set SPEED to 0]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="5" ROW="78">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="89">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+          </ENTRIES>
+        </LAYOUT>
+        <CONNECTIONS>
+          <CONNECTION FORMAT="1.00" ID="3" FROM="1" TO="4" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="5" FROM="4" TO="6" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="9" FROM="32" TO="12" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="13" FROM="12" TO="16" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="7" FROM="6" TO="32" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="15" FROM="12" TO="14" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="30" FROM="29" TO="33" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="19" FROM="16" TO="18" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="21" FROM="14" TO="298" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="28" FROM="18" TO="301" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="17" FROM="16" TO="29" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="34" FROM="33" TO="35" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="36" FROM="35" TO="37" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="40" FROM="39" TO="43" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="38" FROM="37" TO="41" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="42" FROM="41" TO="39" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="44" FROM="43" TO="45" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="46" FROM="45" TO="47" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="48" FROM="47" TO="49" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="56" FROM="59" TO="60" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="50" FROM="49" TO="57" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="52" FROM="57" TO="58" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="54" FROM="58" TO="59" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="61" FROM="60" TO="62" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="63" FROM="62" TO="64" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="65" FROM="64" TO="66" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="79" FROM="78" TO="80" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="67" FROM="66" TO="70" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="71" FROM="70" TO="78" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="96" FROM="80" TO="95" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="73" FROM="70" TO="77" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="91" FROM="89" TO="68" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="81" FROM="80" TO="97" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="86" FROM="77" TO="89" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="107" FROM="106" TO="114" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="98" FROM="97" TO="99" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="100" FROM="99" TO="106" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="105" FROM="99" TO="104" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="115" FROM="114" TO="117" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="108" FROM="95" TO="104" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="112" FROM="104" TO="111" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="116" FROM="111" TO="114" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="118" FROM="117" TO="121" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="120" FROM="117" TO="119" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="122" FROM="121" TO="123" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="124" FROM="123" TO="125" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="182" FROM="178" TO="229" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="130" FROM="119" TO="129" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="126" FROM="125" TO="139" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="137" FROM="136" TO="131" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="134" FROM="125" TO="127" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="135" FROM="127" TO="128" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="133" FROM="129" TO="136" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="138" FROM="128" TO="136" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="140" FROM="139" TO="131" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="143" FROM="131" TO="176" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="148" FROM="147" TO="153" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="150" FROM="147" TO="149" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="226" FROM="224" TO="227" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="156" FROM="155" TO="222" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="166" FROM="167" TO="170" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="184" FROM="183" TO="162" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="164" FROM="162" TO="160" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="154" FROM="153" TO="167" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="169" FROM="168" TO="172" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="171" FROM="170" TO="168" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="173" FROM="172" TO="186" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="187" FROM="186" TO="188" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="145" FROM="146" TO="147" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="177" FROM="176" TO="146" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="152" FROM="149" TO="183" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="175" FROM="172" TO="183" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="189" FROM="188" TO="198" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="191" FROM="188" TO="190" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="193" FROM="192" TO="155" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="196" FROM="190" TO="195" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="197" FROM="195" TO="192" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="199" FROM="198" TO="202" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="201" FROM="198" TO="200" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="207" FROM="206" TO="209" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="205" FROM="200" TO="204" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="203" FROM="202" TO="206" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="208" FROM="204" TO="206" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="210" FROM="209" TO="213" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="212" FROM="209" TO="211" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="218" FROM="217" TO="220" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="216" FROM="211" TO="215" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="214" FROM="213" TO="217" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="219" FROM="215" TO="217" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="221" FROM="220" TO="192" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="161" FROM="160" TO="224" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="223" FROM="222" TO="160" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="228" FROM="227" TO="178" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="230" FROM="229" TO="231" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="238" FROM="237" TO="247" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="243" FROM="240" TO="242" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="234" FROM="229" TO="240" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="232" FROM="231" TO="237" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="239" FROM="235" TO="237" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="245" FROM="242" TO="244" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="246" FROM="244" TO="235" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="248" FROM="247" TO="249" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="252" FROM="251" TO="68" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="250" FROM="249" TO="253" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="258" FROM="253" TO="254" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="259" FROM="254" TO="255" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="260" FROM="255" TO="261" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="262" FROM="261" TO="263" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="272" FROM="271" TO="274" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="267" FROM="261" TO="266" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="268" FROM="266" TO="265" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="270" FROM="265" TO="269" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="264" FROM="263" TO="271" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="273" FROM="269" TO="271" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="275" FROM="274" TO="276" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="296" FROM="278" TO="284" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="285" FROM="284" TO="251" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="283" FROM="274" TO="290" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="292" FROM="290" TO="289" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="288" FROM="287" TO="278" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="286" FROM="281" TO="284" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="277" FROM="276" TO="287" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="293" FROM="289" TO="281" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="295" FROM="287" TO="294" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="297" FROM="294" TO="281" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="306" FROM="301" TO="303" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="304" FROM="303" TO="29" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="305" FROM="298" TO="301" TEXT="" />
+        </CONNECTIONS>
+      </DIAGRAM>
+      <DIAGRAM FORMAT="1.00" ID="1" NAME="Hauptprogramm 2" CREATED="2024.02.24 17:08:09" MODIFIED="2024.02.24 17:36:15">
+        <LAYOUT FORMAT="1.00" COLUMNS="9" ROWS="36">
+          <ENTRIES>
+            <ENTRY COLUMN="0" ROW="26">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="171">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="30">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="192">
+                <TEXT><![CDATA[Is Joystick Left X not 0?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="31">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="197">
+                <TEXT><![CDATA[Direction = 0]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="27">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="214">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="28">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="177">
+                <TEXT><![CDATA[Turn Right]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="29">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="185">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="30">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="195">
+                <TEXT><![CDATA[Calculate Direction]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="31">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="202">
+                <TEXT><![CDATA[Calculate Speed]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="1" ROW="32">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="203">
+                <TEXT><![CDATA[Apply Direction and Speed]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="2" ROW="26">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="160">
+                <TEXT><![CDATA[Is Joystick Right X out of deadzone?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="2" ROW="27">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="162">
+                <TEXT><![CDATA[Is Joystick Right X < 0?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="2" ROW="28">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="169">
+                <TEXT><![CDATA[Turn Left]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="2" ROW="29">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="183">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="0" ANCHOR="True">
+              <FIGURE SUBTYPE="PapTitle" FORMAT="1.00" ID="0">
+                <TEXT><![CDATA[Hauptprogramm 2]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="1">
+              <FIGURE SUBTYPE="PapStart" FORMAT="1.00" ID="1">
+                <TEXT><![CDATA[Start]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="3">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="4" ASSOCIATE="6">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="4">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="16">
+                <TEXT><![CDATA[?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="5">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="22">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="6">
+              <FIGURE SUBTYPE="PapLoopStart" FORMAT="1.00" ID="8" ASSOCIATE="10">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="7">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="12">
+                <TEXT><![CDATA[Set Servo position to position before dance]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="8">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="14">
+                <TEXT><![CDATA[Stop MP3 Playback]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="9">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="60">
+                <TEXT><![CDATA[Turn LEDs Off]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="10">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="62">
+                <TEXT><![CDATA[Is Controller Select Button Pressed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="11">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="68">
+                <TEXT><![CDATA[Rotate through Movement Modes]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="12">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="72">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="13">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="75">
+                <TEXT><![CDATA[Is Controller D-Pad Left pressed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="14">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="82">
+                <TEXT><![CDATA[Turn Lower Servo Clockwise]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="15">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="87">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="16">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="94">
+                <TEXT><![CDATA[Is Controller D-Pad Up pressed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="17">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="99">
+                <TEXT><![CDATA[Turn Upper Servo Counterclockwise]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="18">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="105">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="19">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="112">
+                <TEXT><![CDATA[Is Controller Shoulder Button Left pressed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="20">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="116">
+                <TEXT><![CDATA[Retract Drehleiter Extender]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="21">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="121">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="22">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="132">
+                <TEXT><![CDATA[Is Controller Button Circle pressed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="23">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="134">
+                <TEXT><![CDATA[Are LEDs Blinking?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="24">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="138">
+                <TEXT><![CDATA[Turn LED blinking off]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="25">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="142">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="26">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="156">
+                <TEXT><![CDATA[Movement Mode?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="32">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="205">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="33">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="10" ASSOCIATE="8">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="34">
+              <FIGURE SUBTYPE="PapLoopEnd" FORMAT="1.00" ID="6" ASSOCIATE="4">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="3" ROW="35">
+              <FIGURE SUBTYPE="PapEnd" FORMAT="1.00" ID="2">
+                <TEXT><![CDATA[Ende]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="5">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="20">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="10">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="66">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="4" ROW="12">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="70">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="5" ROW="4">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="25">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="5" ROW="5">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="27">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="4">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="30">
+                <TEXT><![CDATA[afdsafdsafdsafsdafdsajkfldöjsaklöf djsaklöfjksdlajföla]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="13">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="78">
+                <TEXT><![CDATA[Is Controller D-Pad Right pressed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="14">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="84">
+                <TEXT><![CDATA[Turn Lower Servo Counterclockwise]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="15">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="90">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="16">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="96">
+                <TEXT><![CDATA[Is Controller D-Pad Down pressed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="17">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="98">
+                <TEXT><![CDATA[Turn Upper Servo Clockwise]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="18">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="109">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="19">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="114">
+                <TEXT><![CDATA[Is Controller Shoulder Button Right pressed?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="20">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="118">
+                <TEXT><![CDATA[Extend Drehleiter Extender]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="21">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="125">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="23">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="145">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="24">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="136">
+                <TEXT><![CDATA[Turn LED blinking on]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="25">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="140">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="26">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="207">
+                <TEXT><![CDATA[Is Joystick Left X out of deadzone?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="27">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="209">
+                <TEXT><![CDATA[Is Joystick Left X < 0?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="28">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="218">
+                <TEXT><![CDATA[Turn Right]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="29">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="235">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="30">
+              <FIGURE SUBTYPE="PapCondition" FORMAT="1.00" ID="224">
+                <TEXT><![CDATA[Is Speed negative?]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="6" ROW="31">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="240">
+                <TEXT><![CDATA[Set Direction to 0]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="2">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="44">
+                <TEXT><![CDATA[a]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="3">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="33">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="5">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="37">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="13">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="80">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="15">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="85">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="16">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="97">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="18">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="102">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="19">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="115">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="21">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="119">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="22">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="148">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="25">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="153">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="26">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="208">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="27">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="217">
+                <TEXT><![CDATA[Turn Left]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="28">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="223">
+                <TEXT><![CDATA[Calculate Speed based on R2 and L2]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="29">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="233">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="30">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="238">
+                <TEXT><![CDATA[Set Direction to 180]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="31">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="245">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="7" ROW="32">
+              <FIGURE SUBTYPE="PapOutput" FORMAT="1.00" ID="243">
+                <TEXT><![CDATA[Apply Direction and Speed]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="8" ROW="3">
+              <FIGURE SUBTYPE="PapInput" FORMAT="1.00" ID="42">
+                <TEXT><![CDATA[Eingabe von]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="8" ROW="34">
+              <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="57">
+                <TEXT><![CDATA[]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+          </ENTRIES>
+        </LAYOUT>
+        <CONNECTIONS>
+          <CONNECTION FORMAT="1.00" ID="3" FROM="1" TO="4" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="7" FROM="6" TO="2" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="5" FROM="4" TO="16" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="11" FROM="10" TO="6" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="9" FROM="8" TO="12" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="13" FROM="12" TO="14" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="15" FROM="14" TO="60" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="23" FROM="22" TO="8" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="28" FROM="25" TO="27" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="19" FROM="16" TO="25" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="17" FROM="16" TO="22" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="24" FROM="20" TO="22" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="29" FROM="27" TO="20" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="39" FROM="37" TO="27" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="41" FROM="33" TO="37" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="46" FROM="42" TO="57" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="59" FROM="57" TO="6" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="61" FROM="60" TO="62" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="63" FROM="62" TO="68" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="67" FROM="62" TO="66" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="73" FROM="72" TO="75" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="71" FROM="66" TO="70" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="69" FROM="68" TO="72" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="74" FROM="70" TO="72" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="76" FROM="75" TO="82" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="79" FROM="75" TO="78" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="81" FROM="78" TO="80" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="88" FROM="87" TO="94" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="86" FROM="80" TO="85" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="83" FROM="82" TO="87" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="91" FROM="90" TO="87" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="89" FROM="85" TO="90" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="92" FROM="84" TO="90" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="93" FROM="78" TO="84" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="95" FROM="94" TO="99" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="106" FROM="105" TO="112" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="101" FROM="96" TO="98" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="103" FROM="97" TO="102" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="104" FROM="96" TO="97" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="100" FROM="99" TO="105" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="110" FROM="109" TO="105" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="108" FROM="94" TO="96" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="107" FROM="102" TO="109" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="111" FROM="98" TO="109" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="113" FROM="112" TO="116" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="122" FROM="121" TO="132" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="120" FROM="115" TO="119" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="131" FROM="116" TO="121" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="126" FROM="125" TO="121" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="124" FROM="114" TO="115" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="123" FROM="119" TO="125" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="127" FROM="118" TO="125" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="128" FROM="114" TO="118" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="129" FROM="112" TO="114" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="133" FROM="132" TO="134" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="135" FROM="134" TO="138" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="146" FROM="134" TO="145" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="143" FROM="142" TO="156" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="141" FROM="136" TO="140" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="139" FROM="138" TO="142" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="144" FROM="140" TO="142" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="147" FROM="145" TO="136" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="149" FROM="132" TO="148" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="154" FROM="148" TO="153" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="155" FROM="153" TO="140" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="172" FROM="160" TO="171" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="168" FROM="156" TO="207" TEXT="2" />
+          <CONNECTION FORMAT="1.00" ID="165" FROM="160" TO="162" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="164" FROM="156" TO="160" TEXT="1" />
+          <CONNECTION FORMAT="1.00" ID="194" FROM="192" TO="197" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="174" FROM="162" TO="169" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="221" FROM="217" TO="223" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="222" FROM="218" TO="223" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="215" FROM="162" TO="214" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="219" FROM="209" TO="218" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="186" FROM="185" TO="183" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="216" FROM="214" TO="177" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="187" FROM="177" TO="185" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="188" FROM="169" TO="183" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="173" FROM="171" TO="192" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="196" FROM="192" TO="195" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="201" FROM="195" TO="202" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="200" FROM="197" TO="202" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="204" FROM="202" TO="203" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="206" FROM="203" TO="205" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="210" FROM="207" TO="209" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="211" FROM="207" TO="208" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="213" FROM="209" TO="217" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="234" FROM="223" TO="233" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="237" FROM="233" TO="235" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="236" FROM="235" TO="224" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="239" FROM="224" TO="238" TEXT="yes" />
+          <CONNECTION FORMAT="1.00" ID="241" FROM="224" TO="240" TEXT="no" />
+          <CONNECTION FORMAT="1.00" ID="246" FROM="245" TO="243" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="244" FROM="238" TO="245" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="247" FROM="240" TO="245" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="248" FROM="243" TO="205" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="249" FROM="205" TO="10" TEXT="" />
+        </CONNECTIONS>
+      </DIAGRAM>
+    </DIAGRAMS>
+  </PROJECT>
+</FRAME>

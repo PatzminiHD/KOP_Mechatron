@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<FRAME GUID="2FB25471-B62C-4EE6-BD43-F819C095ACF8" FORMAT="0000" APP_VERSION="2.2.0.8" CHECKSUM="8B060D4D5D39D26B">
-  <PROJECT FORMAT="1.00" NAME="Program_Flowchart" AUTHOR="PatzminiHD" CREATED="2023.10.06 17:17:11" MODIFIED="2023.10.06 18:03:59">
+<FRAME GUID="2FB25471-B62C-4EE6-BD43-F819C095ACF8" FORMAT="0000" APP_VERSION="2.2.0.8" CHECKSUM="94D7A789FF598C08">
+  <PROJECT FORMAT="1.00" NAME="Program_Flowchart" AUTHOR="PatzminiHD" CREATED="2023.10.06 17:17:11" MODIFIED="2024.02.24 18:47:50">
     <DIAGRAMS>
-      <DIAGRAM FORMAT="1.00" ID="0" NAME="Main Program" CREATED="2023.10.06 17:17:20" MODIFIED="2023.10.06 18:03:59">
-        <LAYOUT FORMAT="1.00" COLUMNS="2" ROWS="9">
+      <DIAGRAM FORMAT="1.00" ID="0" NAME="Main Program" CREATED="2023.10.06 17:17:20" MODIFIED="2024.02.24 16:20:48">
+        <LAYOUT FORMAT="1.00" COLUMNS="2" ROWS="10">
           <ENTRIES>
             <ENTRY COLUMN="0" ROW="0" ANCHOR="True">
               <FIGURE SUBTYPE="PapTitle" FORMAT="1.00" ID="0">
@@ -16,46 +16,51 @@
               </FIGURE>
             </ENTRY>
             <ENTRY COLUMN="0" ROW="2">
+              <FIGURE SUBTYPE="PapModule" FORMAT="1.00" ID="45">
+                <TEXT><![CDATA[Initialize]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="3">
               <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="34">
                 <TEXT><![CDATA[]]></TEXT>
               </FIGURE>
             </ENTRY>
-            <ENTRY COLUMN="0" ROW="3">
+            <ENTRY COLUMN="0" ROW="4">
               <FIGURE SUBTYPE="PapModule" FORMAT="1.00" ID="16">
                 <TEXT><![CDATA[Connect_Controller]]></TEXT>
               </FIGURE>
             </ENTRY>
-            <ENTRY COLUMN="0" ROW="4">
+            <ENTRY COLUMN="0" ROW="5">
               <FIGURE SUBTYPE="PapModule" FORMAT="1.00" ID="8">
                 <TEXT><![CDATA[Read_Controller_Inputs]]></TEXT>
               </FIGURE>
             </ENTRY>
-            <ENTRY COLUMN="0" ROW="5">
+            <ENTRY COLUMN="0" ROW="6">
               <FIGURE SUBTYPE="PapModule" FORMAT="1.00" ID="10">
                 <TEXT><![CDATA[Set_Motors]]></TEXT>
               </FIGURE>
             </ENTRY>
-            <ENTRY COLUMN="0" ROW="6">
+            <ENTRY COLUMN="0" ROW="7">
               <FIGURE SUBTYPE="PapModule" FORMAT="1.00" ID="14">
                 <TEXT><![CDATA[Set_Servos]]></TEXT>
               </FIGURE>
             </ENTRY>
-            <ENTRY COLUMN="0" ROW="7">
+            <ENTRY COLUMN="0" ROW="8">
               <FIGURE SUBTYPE="PapModule" FORMAT="1.00" ID="12">
                 <TEXT><![CDATA[Set_LEDs]]></TEXT>
               </FIGURE>
             </ENTRY>
-            <ENTRY COLUMN="0" ROW="8">
+            <ENTRY COLUMN="0" ROW="9">
               <FIGURE SUBTYPE="PapEnd" FORMAT="1.00" ID="2">
                 <TEXT><![CDATA[Ende]]></TEXT>
               </FIGURE>
             </ENTRY>
-            <ENTRY COLUMN="1" ROW="2">
+            <ENTRY COLUMN="1" ROW="3">
               <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="32">
                 <TEXT><![CDATA[]]></TEXT>
               </FIGURE>
             </ENTRY>
-            <ENTRY COLUMN="1" ROW="7">
+            <ENTRY COLUMN="1" ROW="8">
               <FIGURE SUBTYPE="PapConnector" FORMAT="1.00" ID="42">
                 <TEXT><![CDATA[]]></TEXT>
               </FIGURE>
@@ -69,9 +74,10 @@
           <CONNECTION FORMAT="1.00" ID="15" FROM="14" TO="12" TEXT="" />
           <CONNECTION FORMAT="1.00" ID="17" FROM="16" TO="8" TEXT="" />
           <CONNECTION FORMAT="1.00" ID="44" FROM="12" TO="42" TEXT="" />
-          <CONNECTION FORMAT="1.00" ID="3" FROM="1" TO="34" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="3" FROM="1" TO="45" TEXT="" />
           <CONNECTION FORMAT="1.00" ID="43" FROM="42" TO="32" TEXT="" />
           <CONNECTION FORMAT="1.00" ID="36" FROM="32" TO="34" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="46" FROM="45" TO="34" TEXT="" />
         </CONNECTIONS>
       </DIAGRAM>
       <DIAGRAM FORMAT="1.00" ID="1" NAME="Read_Controller_Inputs" CREATED="2023.10.06 17:21:05" MODIFIED="2023.10.06 17:30:12">
@@ -817,6 +823,78 @@
           <CONNECTION FORMAT="1.00" ID="34" FROM="30" TO="35" TEXT="" />
           <CONNECTION FORMAT="1.00" ID="39" FROM="35" TO="37" TEXT="" />
           <CONNECTION FORMAT="1.00" ID="41" FROM="40" TO="2" TEXT="" />
+        </CONNECTIONS>
+      </DIAGRAM>
+      <DIAGRAM FORMAT="1.00" ID="10" NAME="Initialize" CREATED="2024.02.24 16:15:11" MODIFIED="2024.02.24 18:47:50">
+        <LAYOUT FORMAT="1.00" COLUMNS="1" ROWS="5">
+          <ENTRIES>
+            <ENTRY COLUMN="0" ROW="0" ANCHOR="True">
+              <FIGURE SUBTYPE="PapTitle" FORMAT="1.00" ID="0">
+                <TEXT><![CDATA[Initialize]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="1">
+              <FIGURE SUBTYPE="PapStart" FORMAT="1.00" ID="1">
+                <TEXT><![CDATA[Start]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="2">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="4">
+                <TEXT><![CDATA[Mount SD Card]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="3">
+              <FIGURE SUBTYPE="PapModule" FORMAT="1.00" ID="6">
+                <TEXT><![CDATA[Initialize_Movement]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="4">
+              <FIGURE SUBTYPE="PapEnd" FORMAT="1.00" ID="2">
+                <TEXT><![CDATA[Ende]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+          </ENTRIES>
+        </LAYOUT>
+        <CONNECTIONS>
+          <CONNECTION FORMAT="1.00" ID="3" FROM="1" TO="4" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="5" FROM="4" TO="6" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="7" FROM="6" TO="2" TEXT="" />
+        </CONNECTIONS>
+      </DIAGRAM>
+      <DIAGRAM FORMAT="1.00" ID="11" NAME="Initialize_Movement" CREATED="2024.02.24 16:16:01" MODIFIED="2024.02.24 16:16:01">
+        <LAYOUT FORMAT="1.00" COLUMNS="1" ROWS="5">
+          <ENTRIES>
+            <ENTRY COLUMN="0" ROW="0" ANCHOR="True">
+              <FIGURE SUBTYPE="PapTitle" FORMAT="1.00" ID="0">
+                <TEXT><![CDATA[Initialize_Movement]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="1">
+              <FIGURE SUBTYPE="PapStart" FORMAT="1.00" ID="1">
+                <TEXT><![CDATA[Start]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="2">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="4">
+                <TEXT><![CDATA[Inizialize_Servo_Controller]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="3">
+              <FIGURE SUBTYPE="PapActivity" FORMAT="1.00" ID="6">
+                <TEXT><![CDATA[Initialize_Controller]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+            <ENTRY COLUMN="0" ROW="4">
+              <FIGURE SUBTYPE="PapEnd" FORMAT="1.00" ID="2">
+                <TEXT><![CDATA[Ende]]></TEXT>
+              </FIGURE>
+            </ENTRY>
+          </ENTRIES>
+        </LAYOUT>
+        <CONNECTIONS>
+          <CONNECTION FORMAT="1.00" ID="3" FROM="1" TO="4" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="5" FROM="4" TO="6" TEXT="" />
+          <CONNECTION FORMAT="1.00" ID="7" FROM="6" TO="2" TEXT="" />
         </CONNECTIONS>
       </DIAGRAM>
     </DIAGRAMS>
