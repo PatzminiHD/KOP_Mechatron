@@ -1,43 +1,46 @@
-Credits
-    Führerhaus oben
-Team Leader: Köglberger Paul
-    Führerhaus Upper Front
-Construction: Buchberger Lukas, Pilz Arian, Eglseer Christina, Lehner Oliver, Templ Kilian, Köglberger Paul, Patzelt Raphael
-    Führerhaus Left Door
-Programmer: Patzelt Raphael
-    Mittelteil Drehleiter Holder Back
-Electronics Technicians: Templ Kilian, Köglberger Paul
-    Führerhaus Right Door
-Donators: Chris Rabit
-    Führerhaus Vorne unten
-Engineers: -
-    Hinterteil Links, Vordere Stiege
-Marketing: Köglberger Paul, Templ Kilian, Patzelt Raphael, Pilz Arian, Buchberger Lukas
-    Hinterteil Links Ultraschallsensor Verdeckung
+Credits in Blender-Render:
+==========================
 
-Re-Construction: Köglberger Paul, Templ Kilian, Patzelt Raphael
+    Credits
+        Führerhaus oben
+    Team Leader: Köglberger Paul
+        Führerhaus Upper Front
+    Construction: Buchberger Lukas, Pilz Arian, Eglseer Christina, Lehner Oliver, Templ Kilian, Köglberger Paul, Patzelt Raphael
+        Führerhaus Left Door
+    Programmer: Patzelt Raphael
+        Mittelteil Drehleiter Holder Back
+    Electronics Technicians: Templ Kilian, Köglberger Paul
+        Führerhaus Right Door
+    Donators: Chris Rabit
+        Führerhaus Vorne unten
+    Engineers: -
+        Hinterteil Links, Vordere Stiege
+    Marketing: Köglberger Paul, Templ Kilian, Patzelt Raphael, Pilz Arian, Buchberger Lukas
+        Hinterteil Links Ultraschallsensor Verdeckung
+    Re-Construction: Köglberger Paul, Templ Kilian, Lehner Oliver, Patzelt Raphael
+        Drehleiter unterer Aufbau hinten
+    Supporters: Schwarzlmüller Gottfried, Riedl Ludwig, Schedlberger Gerhard, Sandmaier Christian, Fuchs Hubert, Küllinger Christoph, Eglseer Günther, Uhl Wolfgang, ##########, Wagner Gregor, Hinterreiter Franz
+        Mittelteil Back
+    Fish (Official): Templ Kilian
+        Drehleiter Rechts
 
+Credits in Scroll:
+==================
 
+    Koks&Kögs KG Intro: Patzelt Raphael
+    Captain Knorr Intro: Templ Kilian
+    Knorr Delivery Intro: ##########
+    CAD-News Intro: Patzelt Raphael
+    Outro: Patzelt Raphael
 
-Supporters: Schwarzlmüller Gottfried, Riedl Ludwig, Schedlberger Gerhard, Sandmaier Christian, Fuchs Hubert, Küllinger Christoph, Eglseer Günther, Uhl Wolfgang, ##########, Wagner Gregor, Hinterreiter Franz
-    Mittelteil Back
-
-
-Fish (Official): Templ Kilian
-
-Koks&Kögs KG Intro: Patzelt Raphael
-Captain Knorr Intro: Templ Kilian
-Knorr Delivery Intro: ##########
-CAD-News Intro: Patzelt Raphael
-
-News reporter: Theodore
-Foreign correspondent: Lehner Oliver
-Video Editing: Templ Kilian, Köglberger Paul, Patzelt Raphael
-Visual Effects: Templ Kilian, Köglberger Paul, Patzelt Raphael
-Video Script: Templ Kilian, Patzelt Raphael, Köglberger Paul
-Audio: ##########, Patzelt Raphael
-Asynchronous speaker: Patzelt Raphael 
-Camera: ##########
-Programs: DaVinci Resolve, Creo, KiCad, PaP Designer, OneNote, git, GitHub Desktop, Paint, GIMP, Prusa Slicer, Code-OSS, Discord, Fusion360, Kate
-Screenshots: Templ Kilian, Pilz Arian, Eglseer Christina, Patzelt Raphael
-Credits: Patzelt Raphael, Köglberger Paul, Templ Kilian
+    News reporter: Theodore
+    Foreign correspondent: Lehner Oliver
+    Video Editing: Templ Kilian, Köglberger Paul, Patzelt Raphael
+    Visual Effects: Templ Kilian, Köglberger Paul, Patzelt Raphael
+    Video Script: Templ Kilian, Patzelt Raphael, Köglberger Paul
+    Audio: ##########, Patzelt Raphael
+    Asynchronous speaker: Patzelt Raphael
+    Camera: ##########
+    Programs: DaVinci Resolve, Creo, KiCad, PaP Designer, OneNote, git, GitHub Desktop, Paint, GIMP, Prusa Slicer, Code-OSS, Discord, Fusion360, Kate
+    Screenshots: Templ Kilian, Pilz Arian, Eglseer Christina, Patzelt Raphael
+    Credits: Patzelt Raphael, Köglberger Paul, Templ Kilian
