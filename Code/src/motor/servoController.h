@@ -15,11 +15,12 @@ class ServoController
     Servo servoLower;
     Servo servoUpper;
     Servo servoExtender;
-    uint8_t servoLowerPosition = 90;
-    uint8_t servoUpperPosition = 0;
-    long long lowerServoLastTurn, upperServoLastTurn;
+    unsigned long lowerServoLastTurn, upperServoLastTurn;
 
     public:
+    uint8_t servoLowerPosition = 90;
+    uint8_t servoUpperPosition = 0;
+
     void init()
     {
         pinMode(constants::pins::motor::ServoLowerPin, OUTPUT);
