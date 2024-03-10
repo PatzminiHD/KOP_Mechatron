@@ -1,0 +1,25 @@
+BLUE  - GND
+YELLO - LED SIG
+GRAY  - Servo SIG Extender
+BROWN - Servo SIG Upper
+WHITE - 5V Servo
+WHITE - 5V Servo
+RED   - 5V Sens
+GREEN - Sensor SIG Upper
+PINK  - Sensor SIG Lower
+
+
+Servos:
+    5V
+    5V
+    GND
+    SIG
+    SIG
+
+Sensors:
+    5V
+    SIG
+    SIG
+
+LED:
+    SIG
