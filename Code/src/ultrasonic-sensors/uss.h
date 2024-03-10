@@ -3,16 +3,17 @@
 class uss
 {
     private:
-
+    unsigned long timeout;
 
     public:
     uint8_t echoPin, triggerPin;
-    uss(uint8_t _echoPin, uint8_t _triggerPin)
+    uss(uint8_t _echoPin, uint8_t _triggerPin, unsigned long _timeout)
     {
         pinMode(_echoPin, INPUT);
         pinMode(_triggerPin, OUTPUT);
         this->echoPin = _echoPin;
         this->triggerPin = _triggerPin;
+        this->timeout = _timeout;
     }
 
     //@brief returns the distance in cm
@@ -26,7 +27,7 @@ class uss
         delayMicroseconds(10);
         digitalWrite(triggerPin, LOW);
         // Reads the echoPin, returns the sound wave travel time in microseconds
-        long duration = pulseIn(echoPin, HIGH);
+        long duration = pulseIn(echoPin, HIGH, timeout);
         // Calculating the distance
         int distance = duration * 0.034 / 2;
         return distance;

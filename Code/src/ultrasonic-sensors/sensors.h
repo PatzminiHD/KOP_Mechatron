@@ -1,13 +1,15 @@
 #include "uss.h"
 #include "../vars/constants.h"
 
+#define TIMEOUT_IN_MICROSECONDS 15000 //15 ms
+
 class Sensors
 {
     private:
-    uss Front = uss(constants::pins::uss::Front_Sens, constants::pins::uss::Trigger);
-    uss Back  = uss(constants::pins::uss::Back_Sens,  constants::pins::uss::Trigger);
-    uss Left  = uss(constants::pins::uss::Left_Sens,  constants::pins::uss::Trigger);
-    uss Right = uss(constants::pins::uss::Right_Sens, constants::pins::uss::Trigger);
+    uss Front = uss(constants::pins::uss::Front_Sens, constants::pins::uss::Trigger, TIMEOUT_IN_MICROSECONDS);
+    uss Back  = uss(constants::pins::uss::Back_Sens,  constants::pins::uss::Trigger, TIMEOUT_IN_MICROSECONDS);
+    uss Left  = uss(constants::pins::uss::Left_Sens,  constants::pins::uss::Trigger, TIMEOUT_IN_MICROSECONDS);
+    uss Right = uss(constants::pins::uss::Right_Sens, constants::pins::uss::Trigger, TIMEOUT_IN_MICROSECONDS);
 
     public:
     bool CanGoFront()
