@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 //@brief Firmware Version
-const char constants::version[] = "v1.5.1";
+const char constants::version[] = "v1.6.0";
 
 //@brief The path of the config file
 const char constants::sdcardIO::ConfigFilePath[] = "/config.txt";
@@ -45,10 +45,6 @@ uint8_t constants::pins::motor::ServoExtenderPin = 27;
 
 uint8_t constants::pins::motor::ServoExtenderLimitSwitchLower_Pin = 39;
 uint8_t constants::pins::motor::ServoExtenderLimitSwitchUpper_Pin = 36;
-
-//@brief The Buzzer Pin
-uint8_t constants::pins::buzzer::buzzer_pin = 5;
-uint8_t constants::pins::buzzer::pwm_channel = 7;
 
 uint8_t constants::pins::uss::Trigger = 25;
 uint8_t constants::pins::uss::Front_Sens = 36;

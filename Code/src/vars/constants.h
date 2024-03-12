@@ -48,12 +48,6 @@ class constants
             static uint8_t ServoExtenderLimitSwitchLower_Pin;
         };
 
-        class buzzer
-        {
-            public:
-            static uint8_t buzzer_pin;
-            static uint8_t pwm_channel;
-        };
         class uss
         {
             public:
