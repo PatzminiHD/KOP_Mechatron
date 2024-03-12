@@ -1,7 +1,6 @@
 #include "motor.h"
 #include "../vars/constants.h"
 #include "../controller/controller.h"
-#include "../music/buzzer.h"
 #include "../led/led.h"
 #include "../ultrasonic-sensors/sensors.h"
 #include "../music/MP3.h"
@@ -44,7 +43,6 @@ class Movement
     void init()
     {
         servoController.init();
-
         Motor_FL.CHANNEL = 0;
         Motor_FL.DIR_PIN = constants::pins::motor::FrontLeft_Dir;
         Motor_FL.SPEED_PIN = constants::pins::motor::FrontLeft_Speed;
@@ -69,17 +67,18 @@ class Movement
         Motor_BR.FORWARD_DIRECTION = true;
         Motor_BR.init();
 
-        controller.init();
-
         MovementMode = MovementMode_GasBreak;
-
         DIRECTION = 0;
         SPEED = 0;
         Apply();
 
-        MP3::mp3File = "/test.mp3";
+        servoController.init();
+
+        controller.init();
+
+        mp3.mp3File = "/test.mp3";
         //MAX VOLUME is 4096
-        MP3::VOLUME = 4096;
+        mp3.VOLUME = MP3_MAX_VOLUME;
     }
 
     void FullSpeed()
