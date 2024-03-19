@@ -26,6 +26,7 @@ class constants
             static uint8_t Top;
             static uint8_t Led1;
             static uint8_t Led2;
+            static uint8_t LedStrip;
         };
 
         class motor

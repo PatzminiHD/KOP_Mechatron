@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 //@brief Firmware Version
-const char constants::version[] = "v2.0.0";
+const char constants::version[] = "v2.0.1";
 
 //@brief The path of the config file
 const char constants::sdcardIO::ConfigFilePath[] = "/config.txt";
@@ -51,6 +51,8 @@ uint8_t constants::pins::uss::Front_Sens = 36;
 uint8_t constants::pins::uss::Back_Sens = 39;
 uint8_t constants::pins::uss::Left_Sens = 34;
 uint8_t constants::pins::uss::Right_Sens = 35;
+
+uint8_t constants::pins::led::LedStrip = 32;
 
 uint8_t constants::uss::FrontBack_Min_Distance = 15;
 uint8_t constants::uss::Side_Min_Distance = 20;
