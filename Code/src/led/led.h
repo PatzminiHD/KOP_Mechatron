@@ -6,32 +6,7 @@
 class Led
 {
     private:
-    TaskHandle_t blinkLEDsTask;
-
-    static void led_top_on()
-    {
-        digitalWrite(constants::pins::led::Top, HIGH);
-    }
-    static void led_1_on()
-    {
-        digitalWrite(constants::pins::led::Led1, HIGH);
-    }
-    static void led_2_on()
-    {
-        digitalWrite(constants::pins::led::Led2, HIGH);
-    }
-    static void led_top_off()
-    {
-        digitalWrite(constants::pins::led::Top, LOW);
-    }
-    static void led_1_off()
-    {
-        digitalWrite(constants::pins::led::Led1, LOW);
-    }
-    static void led_2_off()
-    {
-        digitalWrite(constants::pins::led::Led2, LOW);
-    }
+    TaskHandle_t blinkLEDsTask = NULL;
 
     static void BlinkLEDsTask(void * parameter)
     {
@@ -71,7 +46,42 @@ class Led
     }
 
     public:
-    bool isBlinking;
+    bool isBlinking()
+    {
+        if(blinkLEDsTask == NULL)
+            return false;
+        
+        auto taskState = eTaskGetState(blinkLEDsTask);
+
+        return taskState != eDeleted && taskState != eReady && taskState != eSuspended;
+    }
+
+    static void led_top_on()
+    {
+        digitalWrite(constants::pins::led::Top, HIGH);
+        digitalWrite(5, HIGH);
+    }
+    static void led_1_on()
+    {
+        digitalWrite(constants::pins::led::Led1, HIGH);
+    }
+    static void led_2_on()
+    {
+        digitalWrite(constants::pins::led::Led2, HIGH);
+    }
+    static void led_top_off()
+    {
+        digitalWrite(constants::pins::led::Top, LOW);
+        digitalWrite(5, LOW);
+    }
+    static void led_1_off()
+    {
+        digitalWrite(constants::pins::led::Led1, LOW);
+    }
+    static void led_2_off()
+    {
+        digitalWrite(constants::pins::led::Led2, LOW);
+    }
     
     Led()
     {
@@ -85,7 +95,7 @@ class Led
 
     void StartBlink()
     {
-        if(isBlinking)
+        if(isBlinking())
             return;
 
         xTaskCreatePinnedToCore(
@@ -96,24 +106,22 @@ class Led
             0,
             &blinkLEDsTask,
             0);
-
-        isBlinking = true;
     }
 
     void StopBlink()
     {
-        vTaskSuspend(blinkLEDsTask);
-        vTaskDelete(blinkLEDsTask);
-        
+        if(isBlinking())
+        {
+            vTaskDelete(blinkLEDsTask);
+        }
         led_top_off();
         led_1_off();
         led_2_off();
-        isBlinking = false;
     }
 
     void Toggle()
     {
-        if(isBlinking)
+        if(isBlinking())
             StopBlink();
         else
             StartBlink();
