@@ -155,8 +155,8 @@ class ServoController
     {
         if(!digitalRead(constants::pins::motor::ServoExtenderLimitSwitchUpper_Pin))
         {
-            Serial.print(millis());
-            Serial.println("  Servo Extender Extend...");
+            //Serial.print(millis());
+            //Serial.println("  Servo Extender Extend...");
             servoExtender.write(40);
             delay(3);
             servoExtender.write(90);
@@ -184,8 +184,8 @@ class ServoController
     {
         if(!digitalRead(constants::pins::motor::ServoExtenderLimitSwitchLower_Pin))
         {
-            Serial.print(millis());
-            Serial.println("  Servo Extender Retract...");
+            //Serial.print(millis());
+            //Serial.println("  Servo Extender Retract...");
             servoExtender.write(140);
             delay(3);
             servoExtender.write(90);

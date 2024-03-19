@@ -8,7 +8,7 @@
 #define MINIMP3_NO_STDIO
 #include "minimp3.h"
 
-#define MP3_MAX_VOLUME = 4096
+#define MP3_MAX_VOLUME 4096
 #define MP3_SPIFFS_FILE_NAME "/intern.mp3"
 #define MP3_MAX_INTERNAL_FILE_SIZE 2097152 // 2 * 1024 * 1024
 
@@ -54,6 +54,8 @@ class MP3
     public:
     static std::string mp3File;
     static int VOLUME;
+    static bool shouldStop;
+    TaskHandle_t mp3TaskHandle;
 
     static void play_task(void *param)
     {
@@ -71,23 +73,9 @@ class MP3
             ESP_LOGE("MP3", "Failed to allocate input_buf memory");
         }
 
-        /*if(LoadToIPFS(mp3File))
-        {
-            mp3File = MP3_SPIFFS_FILE_NAME;
-        }*/
-        File root = SD.open("/");
-        File file = root.openNextFile();
-        
-        while(file){
- 
-            Serial.print("FILE: ");
-            Serial.println(file.name());
-        
-            file = root.openNextFile();
-        }
-
         Serial.println("MP3 STARTING");
 
+        shouldStop = false;
         while (true)
         {
             // mp3 decoder state
@@ -101,19 +89,13 @@ class MP3
             bool is_output_started = false;
             
             FILE *fp;
-            /*if(mp3File == MP3_SPIFFS_FILE_NAME)
-            {
-                fp = fopen(("/spiffs" + mp3File).c_str(), "r");
-            }
-            else
-            {
-                fp = fopen(("/sd" + mp3File).c_str(), "r");
-            }*/
+
             fp = fopen(("/sd" + mp3File).c_str(), "r");
 
             if (!fp)
             {
                 ESP_LOGE("MP3", "Failed to open file");
+                fclose(fp);
                 continue;
             }
             while (1)
@@ -126,8 +108,9 @@ class MP3
                 vTaskDelay(pdMS_TO_TICKS(1));
                 // ESP_LOGI("main", "Read %d bytes\n", n);
                 buffered += n;
-                if (buffered == 0)
+                if (buffered == 0 || shouldStop)
                 {
+                    Serial.println("Should Stop!");
                     // we've reached the end of the file and processed all the buffered data
                     output->stop();
                     is_output_started = false;
@@ -172,10 +155,43 @@ class MP3
         }
         vTaskDelete(NULL);
     }
-    static void Play()
+    void Play()
     {
-    xTaskCreatePinnedToCore(play_task, "mp3Task", 32768, NULL, 1, NULL, 0);
+        if(isPlaying())
+            return;
+            
+        xTaskCreatePinnedToCore(
+            play_task,
+            "mp3Task",
+            32768,
+            NULL,
+            1,
+            &mp3TaskHandle,
+            0);
     }
+    void Stop()
+    {
+        shouldStop = true;
+        vTaskDelay(pdMS_TO_TICKS(100));
+        if(isPlaying())
+        {
+            vTaskDelete(mp3TaskHandle);
+        }
+    }
+    bool isPlaying()
+    {
+        if(mp3TaskHandle == NULL)
+        {
+            Serial.println("MP3: IsPlaying false");
+            return false;
+        }
+        
+        auto taskState = eTaskGetState(mp3TaskHandle);
+        Serial.print("MP3: IsPlaying ");
+        Serial.println(taskState != eDeleted && taskState != eReady && taskState != eSuspended);
+        return taskState != eDeleted && taskState != eReady && taskState != eSuspended;
+    }
+
 };
 
 

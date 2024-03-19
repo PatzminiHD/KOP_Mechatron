@@ -11,8 +11,9 @@
 #define DIRECTION_BACKWARDS 180
 #define DIRECTION_LEFT      270
 
-std::string MP3::mp3File;
 int MP3::VOLUME;
+std::string MP3::mp3File;
+bool MP3::shouldStop;
 
 class Movement
 {
@@ -24,6 +25,7 @@ class Movement
 
     Controller controller;
     Led led = Led();
+    MP3 mp3 = MP3();
     Sensors sensors = Sensors();
 
     ServoController servoController;
@@ -42,7 +44,6 @@ class Movement
 
     void init()
     {
-        servoController.init();
         Motor_FL.CHANNEL = 0;
         Motor_FL.DIR_PIN = constants::pins::motor::FrontLeft_Dir;
         Motor_FL.SPEED_PIN = constants::pins::motor::FrontLeft_Speed;
@@ -71,10 +72,11 @@ class Movement
         DIRECTION = 0;
         SPEED = 0;
         Apply();
-
+        Serial.println("Initialised Motors");
         servoController.init();
-
+        Serial.println("Initialised Servo Controller");
         controller.init();
+        Serial.println("Initialised Controller");
 
         mp3.mp3File = "/test.mp3";
         //MAX VOLUME is 4096
@@ -220,15 +222,20 @@ class Movement
             DIRECTION = 0;
             SPEED = 0;
             Apply();
+            //ledcDetachPin(5);
+            //ledcSetup(10, 20000, 8);
+            //ledcAttachPin(5, 10);
             return 1;
         }
 
         controller.loop();
+        //ledcWrite(10, 128);
 
         if(controller.konamiCode)
         {
             Serial.println("KONAMI CODE ENTERED!");
-            MP3::Play();
+            Dance("test");
+            controllerButtonSelectPrev = true;  //Stop Mode Switching
         }
 
         if(controller.buttonSelect == 1 && controllerButtonSelectPrev == false)
@@ -347,5 +354,126 @@ class Movement
         }
         SPEED = map(sqrt(controller.joyLY*controller.joyLY + controller.joyLX*controller.joyLX), 0, 128, 0, MAX_MOTOR_SPEED);
         Apply();
+    }
+
+    void Dance(std::string filename)
+    {
+        Serial.println("Dance start");
+
+        led.StopBlink();
+
+        if (!SD.exists(("/" + filename + ".txt").c_str()))
+        {
+            ESP_LOGE("Movement: Dance", "Failed to open file");
+            return;
+        }
+
+        fs::File file = SD.open(("/" + filename + ".txt").c_str(), FILE_READ);
+        char fileLinesTmp[file.size()];
+        file.read((uint8_t *)fileLinesTmp, sizeof(fileLinesTmp));
+        file.close();
+        std::string fileLines = fileLinesTmp;
+
+        mp3.mp3File = ("/" + filename + ".mp3").c_str();
+        mp3.Play();
+
+        unsigned long timeStarted = millis(), timeNext = 0;
+        uint16_t servoLowerPosPrev = servoController.servoLowerPosition, servoUpperPosPrev = servoController.servoUpperPosition;
+        bool led1 = false, led2 = false, ledTop = false, lastLine = false;
+        std::string fileLine = "";
+        
+        DIRECTION = 0;
+        SPEED = 0;
+
+        Serial.println("Main dance loop");
+        while(!controller.buttonSelect)
+        {
+            controller.loop();
+
+            if(controller.dPadUp && !controller.dPadUpPrev && mp3.VOLUME + 512 <= MP3_MAX_VOLUME)
+            {
+                mp3.VOLUME += 512;
+                Serial.print("Volume: ");
+                Serial.println(mp3.VOLUME);
+            }
+            else if(controller.dPadDown && !controller.dPadDownPrev && mp3.VOLUME - 512 >= 0)
+            {
+                mp3.VOLUME -= 512;
+                Serial.print("Volume: ");
+                Serial.println(mp3.VOLUME);
+            }
+
+            if(millis() > timeNext + timeStarted)
+            {
+                Apply();
+                servoController.applyPosition();
+                if(led1)
+                    Led::led_1_on();
+                else
+                    Led::led_1_off();
+                if(led2)
+                    Led::led_2_on();
+                else
+                    Led::led_2_off();
+                if(ledTop)
+                    Led::led_top_on();
+                else
+                    Led::led_top_off();
+
+
+                if(!lastLine)
+                {
+                    //fileLine: "timeNext,speed,direction,servoLowerPos,servoUpperPos,led1,led2,ledTop"
+                    //          "8951,256,0,90,50,ON,OFF,OFF"
+                    
+                    fileLine = fileLines.substr(0, fileLines.find('\n'));
+                    fileLines = fileLines.substr(fileLines.find('\n') + 1);
+                    if(fileLines.find('\n') == fileLines.npos)
+                        lastLine = true;
+
+                    timeNext = atoll(fileLine.substr(0, fileLine.find(',')).c_str());
+
+                    Serial.println(fileLine.c_str());
+                    
+                    fileLine = fileLine.substr(fileLine.find(',') + 1);
+                    SPEED = atoi(fileLine.substr(0, fileLine.find(',')).c_str());
+
+                    fileLine = fileLine.substr(fileLine.find(',') + 1);
+                    DIRECTION = atoi(fileLine.substr(0, fileLine.find(',')).c_str());
+
+                    fileLine = fileLine.substr(fileLine.find(',') + 1);
+                    servoController.servoLowerPosition = atoi(fileLine.substr(0, fileLine.find(',')).c_str());
+
+                    fileLine = fileLine.substr(fileLine.find(',') + 1);
+                    servoController.servoUpperPosition = atoi(fileLine.substr(0, fileLine.find(',')).c_str());
+
+                    fileLine = fileLine.substr(fileLine.find(',') + 1);
+                    if(fileLine.substr(0, fileLine.find(',')) == "ON")
+                        led1 = true;
+                    else
+                        led1 = false;
+
+                    fileLine = fileLine.substr(fileLine.find(',') + 1);
+                    if(fileLine.substr(0, fileLine.find(',')) == "ON")
+                        led2 = true;
+                    else
+                        led2 = false;
+
+                    fileLine = fileLine.substr(fileLine.find(',') + 1);
+                    if(fileLine.substr(0, fileLine.find(',')) == "ON")
+                        ledTop = true;
+                    else
+                        ledTop = false;
+                }
+            }
+        }
+        servoController.servoLowerPosition = servoLowerPosPrev;
+        servoController.servoUpperPosition = servoUpperPosPrev;
+        servoController.applyPosition();
+
+        mp3.Stop();
+        led.StopBlink();
+
+        Serial.println("End of Dance");
     }
 };

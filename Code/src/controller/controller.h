@@ -4,7 +4,7 @@
 class Controller
 {   
     private:
-    int8_t buttonCirclePrev, buttonXPrev, dPadUpPrev, dPadRightPrev, dPadDownPrev, dPadLeftPrev, buttonStartPrev;
+    int8_t buttonCirclePrev, buttonXPrev, dPadRightPrev, dPadLeftPrev, buttonStartPrev;
     enum KonamiCodeButtons
     {
         KONAMI_BUTTON_NONE,
@@ -18,7 +18,7 @@ class Controller
     };
     KonamiCodeButtons konamiButtonList[11];
     public:
-    int8_t joyLX, joyLY, joyRX, joyRY, buttonSelect, buttonStart, buttonSquare, buttonCircle, buttonTriangle, buttonX, dPadUp, dPadRight, dPadDown, dPadLeft, joyRButton, joyLButton, shoulderButtonL, shoulderButtonR;
+    int8_t joyLX, joyLY, joyRX, joyRY, buttonSelect, buttonStart, buttonSquare, buttonCircle, buttonTriangle, buttonX, dPadUp, dPadRight, dPadDown, dPadLeft, joyRButton, joyLButton, shoulderButtonL, shoulderButtonR, dPadDownPrev, dPadUpPrev;
     ps3_status_battery battery;
     uint8_t throttleGas, throttleBreake;
     unsigned long led_blink_millis;
