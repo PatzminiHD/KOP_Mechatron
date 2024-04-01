@@ -44,3 +44,4 @@ Credits in Scroll:
     Programs: DaVinci Resolve, Creo, KiCad, PaP Designer, OneNote, git, GitHub Desktop, Paint, GIMP, Prusa Slicer, Code-OSS, Discord, Fusion360, Kate
     Screenshots: Templ Kilian, Pilz Arian, Eglseer Christina, Patzelt Raphael
     Credits: Patzelt Raphael, Köglberger Paul, Templ Kilian
+    Outro Song: Zaza - Be together
