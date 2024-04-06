@@ -38,9 +38,10 @@ Credits in Scroll:
     Video Editing: Templ Kilian, Köglberger Paul, Patzelt Raphael
     Visual Effects: Templ Kilian, Köglberger Paul, Patzelt Raphael
     Video Script: Templ Kilian, Patzelt Raphael, Köglberger Paul
-    Audio: ##########, Patzelt Raphael
-    Asynchronous speaker: Patzelt Raphael
-    Camera: ##########
+    Audio: Lehner Oliver
+    Asynchronous speaker: Patzelt Hannes, Patzelt Raphael
+    Camera: Patzelt Raphael, Lehner Oliver, Köglberger Paul, Templ Kilian
+    Costume Designer: R5Suits
     Programs: DaVinci Resolve, Creo, KiCad, PaP Designer, OneNote, git, GitHub Desktop, Paint, GIMP, Prusa Slicer, Code-OSS, Discord, Fusion360, Kate
     Screenshots: Templ Kilian, Pilz Arian, Eglseer Christina, Patzelt Raphael
     Credits: Patzelt Raphael, Köglberger Paul, Templ Kilian

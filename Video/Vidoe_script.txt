@@ -58,9 +58,9 @@ mentioning locations, date: e.g. captain knorr studios headquarters 32/01/2024
             "The company has not yet responded to these complaints"
 
         [Theodore swapping cards]
-
-
-        [Something about Chris Rabit...]
+        [Chris Rabit]
+            "Unfortunately we are experiencing technical difficulties with reaching the DJ for a live interview"
+            "Thanks for joining us in this year's issue of CAD-News. I will see you again next year"
 
 [ADS]
     [montage: gigachad theme; shots on turning platform; lights on; ]
